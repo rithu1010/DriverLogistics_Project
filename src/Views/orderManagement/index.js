@@ -5,6 +5,7 @@ import { Box, Typography, Divider, Grid } from "@mui/material";
 import styles from "./style";
 import { useTheme } from "@mui/material/styles";
 import ProductCategory from "./selectproductCatogory";
+import OrderSummary from "./orderSummary";
 
 const OrderManagement = () => {
   const theme = useTheme();
@@ -13,7 +14,7 @@ const OrderManagement = () => {
     <Box>
       <Box sx={style.orderBox}>
         <Grid container spacing={1}>
-          <Grid item xs={8}>
+          <Grid item xs={8.5}>
             <Box sx={style.OrderManagement}>
               <Box sx={style.displayflex}>
                 <Box>
@@ -32,8 +33,8 @@ const OrderManagement = () => {
               </Box>
             </Box>
           </Grid>
-          <Grid item xs={4}>
-            <Box sx={style.OrderManagement}></Box>
+          <Grid item xs={3.5}>
+            <OrderSummary />
           </Grid>
         </Grid>
       </Box>

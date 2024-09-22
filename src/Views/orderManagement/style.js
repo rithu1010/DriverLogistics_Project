@@ -10,13 +10,17 @@ const styles = () => ({
       padding: "10px 10px 10px 10px",
     },
   },
+  ordersummaryBox: {
+    "&.MuiBox-root": {
+      padding: "0px 2px 10px 10px",
+    },
+  },
   OrderManagement: {
     "&.MuiBox-root": {
       border: "0.3px solid #70707012",
       padding: "15px 3px 15px 3px",
       marginBottom: "29px",
       borderRadius: "4px",
-      height: "100vh",
       paddingBottom: "20px",
       backgroundColor: "#FCFCFC",
       overflow: "auto",
@@ -47,6 +51,7 @@ const styles = () => ({
   OrderNewText: {
     "&.MuiTypography-root": {
       color: "#545454",
+      whiteSpace: "nowrap",
       fontSize: "14px",
       fontWeight: "500",
       opacity: "1",
@@ -89,6 +94,34 @@ const styles = () => ({
       padding: "15px",
     },
   },
+  activeJobsListBox1: {
+    "&.MuiBox-root": {
+      width: "100%",
+      display: "flex",
+      justifyContent: "space-between",
+    },
+  },
+  accordiansummary: {
+    "&.MuiPaper-root.MuiAccordion-root": {
+      marginBlockStart: "auto",
+      border: "1px solid #1b1b1b0a",
+      width: "100%",
+      boxShadow: "none",
+      backgroundColor: "#33fff30f",
+      "&::before": {
+        position: "absolute",
+        opacity: 0.4,
+      },
+    },
+    "& .MuiButtonBase-root.MuiAccordionSummary-root": {
+      padding: "10px",
+    },
+    "& .MuiAccordionSummary-content.Mui-expanded": {
+      margin: 0,
+      marginTop: "-4px",
+    },
+  },
+
   AccordionSummary: {
     "& .MuiAccordionSummary-content": {
       color: "#0d0303",
@@ -101,6 +134,9 @@ const styles = () => ({
       padding: "14px",
       backgroundColor: "#fcfcfc",
       marginTop: "6px",
+      "&:hover": {
+        backgroundColor: "#33fff30f",
+      },
     },
   },
   SpeakerIcon: {
@@ -125,8 +161,86 @@ const styles = () => ({
     "&.MuiBox-root": {
       backgroundColor: "#33fff30f",
       border: "1px solid #1b1b1b0a",
-      marginTop: "12px",
+      marginTop: "15px",
       padding: "15px",
+    },
+  },
+  formText: {
+    "&.MuiTypography-root": {
+      color: "#0d0303",
+      fontSize: "12px",
+      fontWeight: "500",
+      opacity: "0.5",
+      letterSpacing: "0px",
+      marginTop: "8px",
+    },
+  },
+  formLabel: {
+    "&.MuiTypography-root": {
+      color: "#0d0303",
+      fontSize: "13px",
+      fontWeight: "530",
+      opacity: "1",
+      letterSpacing: "0px",
+      marginTop: "8px",
+    },
+  },
+  adcOrderBox: {
+    "&.MuiBox-root": {
+      display: "flex",
+      backgroundColor: "#fff",
+      border: "1px solid #1b1b1b0a",
+      padding: "6px",
+    },
+  },
+  activeRfqtypoassignee: {
+    "&.MuiTypography-root": {
+      fontSize: "11px",
+      fontWeight: "500",
+      color: "#0d0303",
+      marginTop: "1px",
+      opacity: "1",
+      letterSpacing: "0px",
+    },
+  },
+  mainTitlesummary: {
+    "&.MuiTypography-root": {
+      fontSize: "13px",
+      fontWeight: "550",
+      color: "#00000",
+      marginTop: "1px",
+      opacity: "1",
+      letterSpacing: "0px",
+    },
+  },
+  subTitlesummary: {
+    "&.MuiTypography-root": {
+      fontSize: "12px",
+      fontWeight: "400",
+      marginTop: "9px",
+      marginBottom: "20px",
+      color: "#00000",
+      opacity: "1",
+      letterSpacing: "0px",
+    },
+  },
+  ErrorOutlineIcon: {
+    "&.MuiSvgIcon-root": {
+      fontSize: "19px",
+      color: "#0d0303",
+      marginLeft: "0px",
+      marginTop: "6px",
+      opacity: "0.1",
+    },
+  },
+  warningtext: {
+    "&.MuiTypography-root": {
+      fontSize: "12px",
+      fontWeight: "400",
+      marginTop: "6px",
+      color: "#0d0303",
+      opacity: "0.7",
+      letterSpacing: "0px",
     },
   },
 });

@@ -1,11 +1,12 @@
 import React, { useState } from "react";
-import { Box, Divider, Grid, Typography } from "@mui/material";
+import { Box, Divider, Grid, Typography, TextField } from "@mui/material";
 import Accordion from "@mui/material/Accordion";
 import AccordionSummary from "@mui/material/AccordionSummary";
 import AccordionDetails from "@mui/material/AccordionDetails";
 import styles from "./style";
 import { useTheme } from "@mui/material/styles";
 import SpeakerIcon from "@mui/icons-material/Speaker";
+import OrderOverview from "./orderOverview";
 
 const ProductCategory = () => {
   const theme = useTheme();
@@ -100,7 +101,7 @@ const ProductCategory = () => {
         </Accordion>
         {/* Accordian 2 */}
 
-        <Box sx={{ marginTop: "12px" }}>
+        <Box sx={{ marginTop: "15px" }}>
           <Accordion
             expanded={expanded === "panel2"}
             onChange={handleChange("panel2")}
@@ -190,10 +191,99 @@ const ProductCategory = () => {
 
         <Box sx={style.volumetricBox}>
           <Grid container spacing={1}>
-            <Grid item xs={4}>
-              Volumetric
+            {/* Volumetric */}
+            <Grid item xs={12} md={4.5}>
+              <Typography sx={style.formLabel}>Volumetric</Typography>
+              <Grid container spacing={1}>
+                <Grid item xs={4}>
+                  <TextField
+                    label="Length"
+                    variant="outlined"
+                    size="small"
+                    sx={style.inputField}
+                  />
+                </Grid>
+                <Grid item xs={4}>
+                  <TextField
+                    label="Breadth"
+                    variant="outlined"
+                    size="small"
+                    sx={style.inputField}
+                  />
+                </Grid>
+                <Grid item xs={4}>
+                  <TextField
+                    label="Height"
+                    variant="outlined"
+                    size="small"
+                    sx={style.inputField}
+                  />
+                </Grid>
+              </Grid>
+              <Typography sx={style.formText}>
+                Length + Breadth + Height should be at least 15 cm
+              </Typography>
+            </Grid>
+
+            {/* Actual Weight */}
+            <Grid item xs={12} md={3}>
+              <Typography sx={style.formLabel}>Actual Weight</Typography>
+              <Grid container spacing={1}>
+                <Grid item xs={8}>
+                  <TextField
+                    label="Weight"
+                    variant="outlined"
+                    size="small"
+                    sx={style.inputField}
+                  />
+                </Grid>
+                <Grid item xs={4}>
+                  <TextField
+                    label="Kg"
+                    variant="outlined"
+                    size="small"
+                    sx={style.inputField}
+                  />
+                </Grid>
+              </Grid>
+              <Typography sx={style.formText}>
+                Package weight should be at least 50 grams.
+              </Typography>
+            </Grid>
+
+            {/* Invoice No */}
+            <Grid item xs={12} md={3}>
+              <Typography sx={style.formLabel}>Invoice No</Typography>
+              <TextField
+                label="000000"
+                variant="outlined"
+                size="small"
+                sx={style.inputField}
+              />
+            </Grid>
+            <Grid
+              item
+              xs={12}
+              md={1.5}
+              style={{
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+              }}
+            >
+              <Box>
+                <Box sx={style.adcOrderBox}>
+                  <Typography sx={style.OrderNewText}>Adc Order</Typography>
+                  <span style={style.plusicon}>+</span>
+                </Box>
+              </Box>
             </Grid>
           </Grid>
+        </Box>
+
+        {/* orderOverview */}
+        <Box>
+          <OrderOverview />
         </Box>
       </Box>
     </Box>
