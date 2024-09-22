@@ -43,8 +43,14 @@ const styles = () => ({
   },
   displayflex: {
     "&.MuiBox-root": {
-      display: "flex",
-      justifyContent: "space-between",
+      display: { xs: "grid", sm: "flex", md: "flex", lg: "flex", xl: "flex" },
+      justifyContent: {
+        xs: "center",
+        sm: "space-between",
+        md: "space-between",
+        lg: "space-between",
+        xl: "space-between",
+      },
       padding: "0px 24px 0px 12px",
     },
   },
@@ -121,11 +127,32 @@ const styles = () => ({
       marginTop: "-4px",
     },
   },
+  paymentsummary: {
+    "&.MuiPaper-root.MuiAccordion-root": {
+      marginBlockStart: "auto",
+      border: "1px solid #1b1b1b0a",
+      width: "100%",
+      boxShadow: "none",
+      backgroundColor: "#33fff30f",
+      "&::before": {
+        position: "absolute",
+        opacity: 0.4,
+      },
+    },
+    "& .MuiButtonBase-root.MuiAccordionSummary-root": {
+      padding: "10px 10px 10px 15px",
+    },
+    "& .MuiAccordionSummary-content.Mui-expanded": {
+      margin: 0,
+      marginTop: "-4px",
+    },
+  },
 
   AccordionSummary: {
     "& .MuiAccordionSummary-content": {
       color: "#0d0303",
       fontWeight: "550",
+      fontSize: "15px",
     },
   },
   selectcategoryBox: {
@@ -241,6 +268,28 @@ const styles = () => ({
       color: "#0d0303",
       opacity: "0.7",
       letterSpacing: "0px",
+    },
+  },
+  tablecellmain: {
+    "&.MuiTypography-root": {
+      fontSize: "12px",
+      fontWeight: "550",
+      color: "#0d0303",
+      opacity: "0.7",
+      letterSpacing: "0px",
+      marginTop: "-6px",
+      marginBottom: "-6px",
+    },
+  },
+  tablecellmain1: {
+    "&.MuiTypography-root": {
+      fontSize: "13px",
+      fontWeight: "500",
+      color: "#0d0303",
+      opacity: "0.7",
+      letterSpacing: "0px",
+      marginTop: "-6px",
+      marginBottom: "-6px",
     },
   },
 });

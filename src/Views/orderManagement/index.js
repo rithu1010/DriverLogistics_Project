@@ -14,7 +14,7 @@ const OrderManagement = () => {
     <Box>
       <Box sx={style.orderBox}>
         <Grid container spacing={1}>
-          <Grid item xs={8.5}>
+          <Grid item xs={12} lg={8.5} xl={8.5} md={8.5} sm={12}>
             <Box sx={style.OrderManagement}>
               <Box sx={style.displayflex}>
                 <Box>
@@ -33,7 +33,7 @@ const OrderManagement = () => {
               </Box>
             </Box>
           </Grid>
-          <Grid item xs={3.5}>
+          <Grid item xs={12} lg={3.5} xl={3.5} md={3.5} sm={12}>
             <OrderSummary />
           </Grid>
         </Grid>

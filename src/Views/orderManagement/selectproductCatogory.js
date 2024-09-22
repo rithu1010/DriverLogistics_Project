@@ -44,7 +44,7 @@ const ProductCategory = () => {
 
           <AccordionDetails>
             <Grid container spacing={1}>
-              <Grid item xs={2.4}>
+              <Grid item xs={12} lg={2.4} xl={2.4} md={2.4} sm={6}>
                 <Box sx={style.selectcategoryBox}>
                   <Box style={{ display: "flex", justifyContent: "center" }}>
                     <SpeakerIcon sx={style.SpeakerIcon} />
@@ -54,7 +54,7 @@ const ProductCategory = () => {
                   </Box>
                 </Box>
               </Grid>
-              <Grid item xs={2.4}>
+              <Grid item xs={12} lg={2.4} xl={2.4} md={2.4} sm={6}>
                 <Box sx={style.selectcategoryBox}>
                   <Box style={{ display: "flex", justifyContent: "center" }}>
                     <SpeakerIcon sx={style.SpeakerIcon} />
@@ -64,7 +64,7 @@ const ProductCategory = () => {
                   </Box>
                 </Box>
               </Grid>
-              <Grid item xs={2.4}>
+              <Grid item xs={12} lg={2.4} xl={2.4} md={2.4} sm={6}>
                 <Box sx={style.selectcategoryBox}>
                   <Box style={{ display: "flex", justifyContent: "center" }}>
                     <SpeakerIcon sx={style.SpeakerIcon} />
@@ -76,7 +76,7 @@ const ProductCategory = () => {
                   </Box>
                 </Box>
               </Grid>
-              <Grid item xs={2.4}>
+              <Grid item xs={12} lg={2.4} xl={2.4} md={2.4} sm={6}>
                 <Box sx={style.selectcategoryBox}>
                   <Box style={{ display: "flex", justifyContent: "center" }}>
                     <SpeakerIcon sx={style.SpeakerIcon} />
@@ -86,7 +86,7 @@ const ProductCategory = () => {
                   </Box>
                 </Box>
               </Grid>
-              <Grid item xs={2.4}>
+              <Grid item xs={12} lg={2.4} xl={2.4} md={2.4} sm={6}>
                 <Box sx={style.selectcategoryBox}>
                   <Box style={{ display: "flex", justifyContent: "center" }}>
                     <SpeakerIcon sx={style.SpeakerIcon} />
@@ -124,7 +124,7 @@ const ProductCategory = () => {
 
             <AccordionDetails>
               <Grid container spacing={1}>
-                <Grid item xs={2.4}>
+                <Grid item xs={12} lg={2.4} xl={2.4} md={2.4} sm={6}>
                   <Box sx={style.selectcategoryBox}>
                     <Box style={{ display: "flex", justifyContent: "center" }}>
                       <SpeakerIcon sx={style.SpeakerIcon} />
@@ -136,7 +136,7 @@ const ProductCategory = () => {
                     </Box>
                   </Box>
                 </Grid>
-                <Grid item xs={2.4}>
+                <Grid item xs={12} lg={2.4} xl={2.4} md={2.4} sm={6}>
                   <Box sx={style.selectcategoryBox}>
                     <Box style={{ display: "flex", justifyContent: "center" }}>
                       <SpeakerIcon sx={style.SpeakerIcon} />
@@ -148,7 +148,7 @@ const ProductCategory = () => {
                     </Box>
                   </Box>
                 </Grid>
-                <Grid item xs={2.4}>
+                <Grid item xs={12} lg={2.4} xl={2.4} md={2.4} sm={6}>
                   <Box sx={style.selectcategoryBox}>
                     <Box style={{ display: "flex", justifyContent: "center" }}>
                       <SpeakerIcon sx={style.SpeakerIcon} />
@@ -160,7 +160,7 @@ const ProductCategory = () => {
                     </Box>
                   </Box>
                 </Grid>
-                <Grid item xs={2.4}>
+                <Grid item xs={12} lg={2.4} xl={2.4} md={2.4} sm={6}>
                   <Box sx={style.selectcategoryBox}>
                     <Box style={{ display: "flex", justifyContent: "center" }}>
                       <SpeakerIcon sx={style.SpeakerIcon} />
@@ -172,7 +172,7 @@ const ProductCategory = () => {
                     </Box>
                   </Box>
                 </Grid>
-                <Grid item xs={2.4}>
+                <Grid item xs={12} lg={2.4} xl={2.4} md={2.4} sm={6}>
                   <Box sx={style.selectcategoryBox}>
                     <Box style={{ display: "flex", justifyContent: "center" }}>
                       <SpeakerIcon sx={style.SpeakerIcon} />
@@ -192,31 +192,34 @@ const ProductCategory = () => {
         <Box sx={style.volumetricBox}>
           <Grid container spacing={1}>
             {/* Volumetric */}
-            <Grid item xs={12} md={4.5}>
+            <Grid item xs={12} md={4.5} sm={12}>
               <Typography sx={style.formLabel}>Volumetric</Typography>
               <Grid container spacing={1}>
-                <Grid item xs={4}>
+                <Grid item xs={6} sm={4} md={4} lg={4} xl={4}>
                   <TextField
                     label="Length"
                     variant="outlined"
                     size="small"
                     sx={style.inputField}
+                    fullWidth
                   />
                 </Grid>
-                <Grid item xs={4}>
+                <Grid item xs={6} sm={4} md={4} lg={4} xl={4}>
                   <TextField
                     label="Breadth"
                     variant="outlined"
                     size="small"
                     sx={style.inputField}
+                    fullWidth
                   />
                 </Grid>
-                <Grid item xs={4}>
+                <Grid item xs={6} sm={4} md={4} lg={4} xl={4}>
                   <TextField
                     label="Height"
                     variant="outlined"
                     size="small"
                     sx={style.inputField}
+                    fullWidth
                   />
                 </Grid>
               </Grid>
@@ -226,23 +229,25 @@ const ProductCategory = () => {
             </Grid>
 
             {/* Actual Weight */}
-            <Grid item xs={12} md={3}>
+            <Grid item xs={12} md={3} sm={12}>
               <Typography sx={style.formLabel}>Actual Weight</Typography>
               <Grid container spacing={1}>
-                <Grid item xs={8}>
+                <Grid item xs={6} md={8} sm={6} lg={8} xl={8}>
                   <TextField
                     label="Weight"
                     variant="outlined"
                     size="small"
                     sx={style.inputField}
+                    fullWidth
                   />
                 </Grid>
-                <Grid item xs={4}>
+                <Grid item xs={6} md={4} sm={6} lg={4} xl={4}>
                   <TextField
                     label="Kg"
                     variant="outlined"
                     size="small"
                     sx={style.inputField}
+                    fullWidth
                   />
                 </Grid>
               </Grid>
@@ -252,7 +257,7 @@ const ProductCategory = () => {
             </Grid>
 
             {/* Invoice No */}
-            <Grid item xs={12} md={3}>
+            <Grid item xs={12} md={3} sm={12}>
               <Typography sx={style.formLabel}>Invoice No</Typography>
               <TextField
                 label="000000"

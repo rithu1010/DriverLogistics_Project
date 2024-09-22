@@ -1,5 +1,17 @@
 import React, { useState } from "react";
-import { Box, Typography, Grid, Divider } from "@mui/material";
+import {
+  Box,
+  Typography,
+  Grid,
+  Divider,
+  Table,
+  TableBody,
+  TableCell,
+  TableContainer,
+  TableRow,
+  Paper,
+} from "@mui/material";
+
 import Accordion from "@mui/material/Accordion";
 import AccordionSummary from "@mui/material/AccordionSummary";
 import AccordionDetails from "@mui/material/AccordionDetails";
@@ -148,7 +160,7 @@ const ProductCategory = () => {
             expanded={expanded === "panel2"}
             onChange={handleChange("panel2")}
             sx={{
-              ...style.accordiansummary,
+              ...style.paymentsummary,
             }}
           >
             <AccordionSummary
@@ -159,7 +171,7 @@ const ProductCategory = () => {
             >
               <Box sx={style.activeJobsListBox1}>
                 <Box style={{ display: "flex" }}>Payment Summary</Box>
-                <Box>
+                <Box sx={{ marginRight: "18px" }}>
                   <Typography sx={style.activeRfqtypoassignee}>
                     Total Weight
                   </Typography>
@@ -167,9 +179,128 @@ const ProductCategory = () => {
               </Box>
             </AccordionSummary>
 
-            <AccordionDetails></AccordionDetails>
+            <AccordionDetails>
+              <Box>
+                <TableContainer>
+                  <Table>
+                    <TableBody>
+                      <TableRow sx={{ borderTop: "1px solid #1b1b1b0a" }}>
+                        <TableCell
+                          sx={{
+                            borderRight: "1px solid #1b1b1b0a",
+                            paddingRight: 1,
+                            padding: 0,
+                          }}
+                        >
+                          <Typography sx={style.tablecellmain}>
+                            Total Shipment Count
+                          </Typography>
+                        </TableCell>
+                        <TableCell sx={{ paddingLeft: 1 }}>
+                          <Typography sx={style.tablecellmain1}>
+                            10.00
+                          </Typography>
+                        </TableCell>
+                      </TableRow>
+
+                      <TableRow>
+                        <TableCell
+                          sx={{
+                            borderRight: "1px solid #1b1b1b0a",
+                            paddingRight: 1,
+                            padding: 0,
+                          }}
+                        >
+                          <Typography sx={style.tablecellmain}>
+                            Base Freight Amount
+                          </Typography>
+                        </TableCell>
+                        <TableCell sx={{ paddingLeft: 1 }}>
+                          <Typography sx={style.tablecellmain1}>
+                            10.00
+                          </Typography>
+                        </TableCell>
+                      </TableRow>
+                      <TableRow>
+                        <TableCell
+                          sx={{
+                            borderRight: "1px solid #1b1b1b0a",
+                            paddingRight: 1,
+                            padding: 0,
+                          }}
+                        >
+                          <Typography sx={style.tablecellmain}>
+                            Accessorial freight amount
+                          </Typography>
+                        </TableCell>
+                        <TableCell sx={{ paddingLeft: 1 }}>
+                          <Typography sx={style.tablecellmain1}>
+                            546kg
+                          </Typography>
+                        </TableCell>
+                      </TableRow>
+                      <TableRow>
+                        <TableCell
+                          sx={{
+                            borderRight: "1px solid #1b1b1b0a",
+                            paddingRight: 1,
+                            padding: 0,
+                          }}
+                        >
+                          <Typography sx={style.tablecellmain}>
+                            Docket Charge
+                          </Typography>
+                        </TableCell>
+                        <TableCell sx={{ paddingLeft: 1 }}>
+                          <Typography sx={style.tablecellmain1}>
+                            ₹2,01600
+                          </Typography>
+                        </TableCell>
+                      </TableRow>
+                      <TableRow>
+                        <TableCell
+                          sx={{
+                            borderRight: "1px solid #1b1b1b0a",
+                            paddingRight: 1,
+                            padding: 0,
+                          }}
+                        >
+                          <Typography sx={style.tablecellmain}>
+                            Stationary Charge
+                          </Typography>
+                        </TableCell>
+                        <TableCell sx={{ paddingLeft: 1 }}>
+                          <Typography sx={style.tablecellmain1}>
+                            #50:00
+                          </Typography>
+                        </TableCell>
+                      </TableRow>
+                      <TableRow>
+                        <TableCell
+                          sx={{
+                            borderRight: "1px solid #1b1b1b0a",
+                            paddingRight: 1,
+                            padding: 0,
+                          }}
+                        >
+                          <Typography sx={style.tablecellmain}>
+                            Handling Charge Per Box
+                          </Typography>
+                        </TableCell>
+                        <TableCell sx={{ paddingLeft: 1 }}>
+                          <Typography sx={style.tablecellmain1}>
+                            #500.00
+                          </Typography>
+                        </TableCell>
+                      </TableRow>
+                    </TableBody>
+                  </Table>
+                </TableContainer>
+              </Box>
+            </AccordionDetails>
           </Accordion>
         </Box>
+        <Box sx={style.volumetricBox}></Box>
       </Box>
     </Box>
   );
