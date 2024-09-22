@@ -19,8 +19,36 @@ const ProductCategory = () => {
     setExpanded(isExpanded ? panel : false);
   };
 
+  const [selectedCategory, setSelectedCategory] = useState("");
+  const [selectedLoadType, setSelectedLoadType] = useState("");
+  const [volumetricData, setVolumetricData] = useState({
+    length: "",
+    breadth: "",
+    height: "",
+    weight: "",
+    invoice: "",
+  });
+  const [orderData, setOrderData] = useState([]);
+  console.log("ordergggggData", orderData);
+
   const handleorderOpen = () => {
     setorderOpen(true);
+    const order = {
+      category: selectedCategory,
+      loadType: selectedLoadType,
+      ...volumetricData,
+    };
+    setOrderData((prevOrders) => [...prevOrders, order]);
+    setSelectedCategory("");
+    setSelectedLoadType("");
+    setVolumetricData({
+      length: "",
+      breadth: "",
+      height: "",
+      weight: "",
+      invoice: "",
+    });
+    setExpanded("panel1");
   };
 
   const handleorderClose = () => {
@@ -41,6 +69,22 @@ const ProductCategory = () => {
     { name: "Plastic" },
     { name: "Others" },
   ];
+
+  const handleCategorySelect = (category) => {
+    setSelectedCategory(category);
+  };
+
+  const handleLoadTypeSelect = (loadType) => {
+    setSelectedLoadType(loadType);
+  };
+
+  const handleVolumetricChange = (e) => {
+    const { name, value } = e.target;
+    setVolumetricData((prevState) => ({
+      ...prevState,
+      [name]: value,
+    }));
+  };
 
   return (
     <Box>
@@ -79,7 +123,16 @@ const ProductCategory = () => {
                   sm={6}
                   key={index}
                 >
-                  <Box sx={style.selectcategoryBox}>
+                  <Box
+                    onClick={() => handleCategorySelect(option?.name)}
+                    sx={style.selectcategoryBox}
+                    style={{
+                      backgroundColor:
+                        selectedCategory === option?.name
+                          ? "#33fff30f"
+                          : "white",
+                    }}
+                  >
                     <Box style={{ display: "flex", justifyContent: "center" }}>
                       <SpeakerIcon sx={style.SpeakerIcon} />
                     </Box>
@@ -129,7 +182,16 @@ const ProductCategory = () => {
                     sm={6}
                     key={index}
                   >
-                    <Box sx={style.selectcategoryBox}>
+                    <Box
+                      sx={style.selectcategoryBox}
+                      onClick={() => handleLoadTypeSelect(option?.name)}
+                      style={{
+                        backgroundColor:
+                          selectedLoadType === option?.name
+                            ? "#33fff30f"
+                            : "white",
+                      }}
+                    >
                       <Box
                         style={{ display: "flex", justifyContent: "center" }}
                       >
@@ -139,7 +201,7 @@ const ProductCategory = () => {
                         style={{ display: "flex", justifyContent: "center" }}
                       >
                         <Typography sx={style.categoryText}>
-                          {option?.name}{" "}
+                          {option?.name}
                         </Typography>
                       </Box>
                     </Box>
@@ -165,6 +227,9 @@ const ProductCategory = () => {
                     size="small"
                     sx={style.inputField}
                     fullWidth
+                    name="length"
+                    value={volumetricData?.length}
+                    onChange={handleVolumetricChange}
                   />
                 </Grid>
                 <Grid item xs={6} sm={4} md={4} lg={4} xl={4}>
@@ -174,6 +239,9 @@ const ProductCategory = () => {
                     size="small"
                     sx={style.inputField}
                     fullWidth
+                    name="breadth"
+                    value={volumetricData?.breadth}
+                    onChange={handleVolumetricChange}
                   />
                 </Grid>
                 <Grid item xs={6} sm={4} md={4} lg={4} xl={4}>
@@ -183,6 +251,9 @@ const ProductCategory = () => {
                     size="small"
                     sx={style.inputField}
                     fullWidth
+                    name="height"
+                    value={volumetricData?.height}
+                    onChange={handleVolumetricChange}
                   />
                 </Grid>
               </Grid>
@@ -202,6 +273,9 @@ const ProductCategory = () => {
                     size="small"
                     sx={style.inputField}
                     fullWidth
+                    name="weight"
+                    value={volumetricData?.weight}
+                    onChange={handleVolumetricChange}
                   />
                 </Grid>
                 <Grid item xs={6} md={4} sm={6} lg={4} xl={4}>
@@ -227,6 +301,9 @@ const ProductCategory = () => {
                 variant="outlined"
                 size="small"
                 sx={style.inputField}
+                name="invoice"
+                value={volumetricData?.invoice}
+                onChange={handleVolumetricChange}
               />
             </Grid>
             <Grid
