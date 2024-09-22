@@ -7,16 +7,41 @@ import styles from "./style";
 import { useTheme } from "@mui/material/styles";
 import SpeakerIcon from "@mui/icons-material/Speaker";
 import OrderOverview from "./orderOverview";
+import AddOrdermodal from "./AddOrderModal";
 
 const ProductCategory = () => {
   const theme = useTheme();
   const style = styles(theme);
 
   const [expanded, setExpanded] = useState("panel1");
-
+  const [orderOpen, setorderOpen] = useState(false);
   const handleChange = (panel) => (event, isExpanded) => {
     setExpanded(isExpanded ? panel : false);
   };
+
+  const handleorderOpen = () => {
+    setorderOpen(true);
+  };
+
+  const handleorderClose = () => {
+    setorderOpen(false);
+  };
+
+  const SelectProductCategory = [
+    { name: "Consumables" },
+    { name: "Electronics" },
+    { name: "Sports Equipments" },
+    { name: "Cloth Items" },
+    { name: "Others" },
+  ];
+
+  const SelectLoadType = [
+    { name: "Carton Box" },
+    { name: "Wooden Box" },
+    { name: "Plastic" },
+    { name: "Others" },
+  ];
+
   return (
     <Box>
       <Box sx={style.productcategrory}>
@@ -44,58 +69,28 @@ const ProductCategory = () => {
 
           <AccordionDetails>
             <Grid container spacing={1}>
-              <Grid item xs={12} lg={2.4} xl={2.4} md={2.4} sm={6}>
-                <Box sx={style.selectcategoryBox}>
-                  <Box style={{ display: "flex", justifyContent: "center" }}>
-                    <SpeakerIcon sx={style.SpeakerIcon} />
+              {SelectProductCategory?.map((option, index) => (
+                <Grid
+                  item
+                  xs={12}
+                  lg={2.4}
+                  xl={2.4}
+                  md={2.4}
+                  sm={6}
+                  key={index}
+                >
+                  <Box sx={style.selectcategoryBox}>
+                    <Box style={{ display: "flex", justifyContent: "center" }}>
+                      <SpeakerIcon sx={style.SpeakerIcon} />
+                    </Box>
+                    <Box style={{ display: "flex", justifyContent: "center" }}>
+                      <Typography sx={style.categoryText}>
+                        {option.name}
+                      </Typography>
+                    </Box>
                   </Box>
-                  <Box style={{ display: "flex", justifyContent: "center" }}>
-                    <Typography sx={style.categoryText}>Consumables</Typography>
-                  </Box>
-                </Box>
-              </Grid>
-              <Grid item xs={12} lg={2.4} xl={2.4} md={2.4} sm={6}>
-                <Box sx={style.selectcategoryBox}>
-                  <Box style={{ display: "flex", justifyContent: "center" }}>
-                    <SpeakerIcon sx={style.SpeakerIcon} />
-                  </Box>
-                  <Box style={{ display: "flex", justifyContent: "center" }}>
-                    <Typography sx={style.categoryText}>Consumables</Typography>
-                  </Box>
-                </Box>
-              </Grid>
-              <Grid item xs={12} lg={2.4} xl={2.4} md={2.4} sm={6}>
-                <Box sx={style.selectcategoryBox}>
-                  <Box style={{ display: "flex", justifyContent: "center" }}>
-                    <SpeakerIcon sx={style.SpeakerIcon} />
-                  </Box>
-                  <Box style={{ display: "flex", justifyContent: "center" }}>
-                    <Typography sx={style.categoryText}>
-                      Sports Equipments
-                    </Typography>
-                  </Box>
-                </Box>
-              </Grid>
-              <Grid item xs={12} lg={2.4} xl={2.4} md={2.4} sm={6}>
-                <Box sx={style.selectcategoryBox}>
-                  <Box style={{ display: "flex", justifyContent: "center" }}>
-                    <SpeakerIcon sx={style.SpeakerIcon} />
-                  </Box>
-                  <Box style={{ display: "flex", justifyContent: "center" }}>
-                    <Typography sx={style.categoryText}>Cloth Items</Typography>
-                  </Box>
-                </Box>
-              </Grid>
-              <Grid item xs={12} lg={2.4} xl={2.4} md={2.4} sm={6}>
-                <Box sx={style.selectcategoryBox}>
-                  <Box style={{ display: "flex", justifyContent: "center" }}>
-                    <SpeakerIcon sx={style.SpeakerIcon} />
-                  </Box>
-                  <Box style={{ display: "flex", justifyContent: "center" }}>
-                    <Typography sx={style.categoryText}>Other</Typography>
-                  </Box>
-                </Box>
-              </Grid>
+                </Grid>
+              ))}
             </Grid>
           </AccordionDetails>
         </Accordion>
@@ -124,64 +119,32 @@ const ProductCategory = () => {
 
             <AccordionDetails>
               <Grid container spacing={1}>
-                <Grid item xs={12} lg={2.4} xl={2.4} md={2.4} sm={6}>
-                  <Box sx={style.selectcategoryBox}>
-                    <Box style={{ display: "flex", justifyContent: "center" }}>
-                      <SpeakerIcon sx={style.SpeakerIcon} />
+                {SelectLoadType?.map((option, index) => (
+                  <Grid
+                    item
+                    xs={12}
+                    lg={2.4}
+                    xl={2.4}
+                    md={2.4}
+                    sm={6}
+                    key={index}
+                  >
+                    <Box sx={style.selectcategoryBox}>
+                      <Box
+                        style={{ display: "flex", justifyContent: "center" }}
+                      >
+                        <SpeakerIcon sx={style.SpeakerIcon} />
+                      </Box>
+                      <Box
+                        style={{ display: "flex", justifyContent: "center" }}
+                      >
+                        <Typography sx={style.categoryText}>
+                          {option?.name}{" "}
+                        </Typography>
+                      </Box>
                     </Box>
-                    <Box style={{ display: "flex", justifyContent: "center" }}>
-                      <Typography sx={style.categoryText}>
-                        Consumables
-                      </Typography>
-                    </Box>
-                  </Box>
-                </Grid>
-                <Grid item xs={12} lg={2.4} xl={2.4} md={2.4} sm={6}>
-                  <Box sx={style.selectcategoryBox}>
-                    <Box style={{ display: "flex", justifyContent: "center" }}>
-                      <SpeakerIcon sx={style.SpeakerIcon} />
-                    </Box>
-                    <Box style={{ display: "flex", justifyContent: "center" }}>
-                      <Typography sx={style.categoryText}>
-                        Consumables
-                      </Typography>
-                    </Box>
-                  </Box>
-                </Grid>
-                <Grid item xs={12} lg={2.4} xl={2.4} md={2.4} sm={6}>
-                  <Box sx={style.selectcategoryBox}>
-                    <Box style={{ display: "flex", justifyContent: "center" }}>
-                      <SpeakerIcon sx={style.SpeakerIcon} />
-                    </Box>
-                    <Box style={{ display: "flex", justifyContent: "center" }}>
-                      <Typography sx={style.categoryText}>
-                        Sports Equipments
-                      </Typography>
-                    </Box>
-                  </Box>
-                </Grid>
-                <Grid item xs={12} lg={2.4} xl={2.4} md={2.4} sm={6}>
-                  <Box sx={style.selectcategoryBox}>
-                    <Box style={{ display: "flex", justifyContent: "center" }}>
-                      <SpeakerIcon sx={style.SpeakerIcon} />
-                    </Box>
-                    <Box style={{ display: "flex", justifyContent: "center" }}>
-                      <Typography sx={style.categoryText}>
-                        Cloth Items
-                      </Typography>
-                    </Box>
-                  </Box>
-                </Grid>
-                <Grid item xs={12} lg={2.4} xl={2.4} md={2.4} sm={6}>
-                  <Box sx={style.selectcategoryBox}>
-                    <Box style={{ display: "flex", justifyContent: "center" }}>
-                      <SpeakerIcon sx={style.SpeakerIcon} />
-                    </Box>
-                    <Box style={{ display: "flex", justifyContent: "center" }}>
-                      <Typography sx={style.categoryText}>Other</Typography>
-                    </Box>
-                  </Box>
-                </Grid>
+                  </Grid>
+                ))}
               </Grid>
             </AccordionDetails>
           </Accordion>
@@ -277,8 +240,8 @@ const ProductCategory = () => {
               }}
             >
               <Box>
-                <Box sx={style.adcOrderBox}>
-                  <Typography sx={style.OrderNewText}>Adc Order</Typography>
+                <Box sx={style.adcOrderBox} onClick={handleorderOpen}>
+                  <Typography sx={style.OrderNewText}>Add Order</Typography>
                   <span style={style.plusicon}>+</span>
                 </Box>
               </Box>
@@ -291,6 +254,7 @@ const ProductCategory = () => {
           <OrderOverview />
         </Box>
       </Box>
+      <AddOrdermodal open={orderOpen} handleClose={handleorderClose} />
     </Box>
   );
 };

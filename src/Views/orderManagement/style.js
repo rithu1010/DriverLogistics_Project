@@ -62,6 +62,7 @@ const styles = () => ({
       fontWeight: "500",
       opacity: "1",
       letterSpacing: "0px",
+      cursor: "pointer",
     },
   },
   plusicon: {
@@ -362,6 +363,61 @@ const styles = () => ({
       marginTop: "27px",
       width: "200px",
       textTransform: "normal",
+    },
+  },
+  doneiconBox: {
+    "&.MuiBox-root": {
+      padding: "10px",
+      height: "85px",
+      width: "85px",
+      borderRadius: "60px",
+      backgroundColor: "#a6ffd347",
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "center",
+      marginBottom: "0px",
+      marginTop: "30px",
+    },
+  },
+  DoneIcon: {
+    "&.MuiSvgIcon-root": {
+      fontSize: "59px",
+      color: "#0d880d87",
+      marginLeft: "0px",
+      marginTop: "6px",
+      opacity: "1",
+    },
+  },
+  OrderAdd: {
+    "&.MuiBox-root": {
+      fontSize: "16px",
+      fontWeight: "500",
+      color: "#0d0303",
+      opacity: "0.7",
+      letterSpacing: "0px",
+      marginTop: "18px",
+      marginBottom: "19px",
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "center",
+    },
+  },
+  okayButton: {
+    "&.MuiBox-root": {
+      backgroundColor: "#6a92ba42",
+      color: "#0d0303",
+      width: "50px",
+      borderRadius: "8px",
+      textAlign: "center",
+      padding: "5px 5px 5px 5px",
+      marginBottom: "30px",
+    },
+  },
+  displayFlex: {
+    "&.MuiBox-root": {
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "center",
     },
   },
 });
