@@ -9,7 +9,8 @@ import {
   TableCell,
   TableContainer,
   TableRow,
-  Paper,
+  Checkbox,
+  Button,
 } from "@mui/material";
 
 import Accordion from "@mui/material/Accordion";
@@ -300,7 +301,61 @@ const ProductCategory = () => {
             </AccordionDetails>
           </Accordion>
         </Box>
-        <Box sx={style.volumetricBox}></Box>
+        <Box sx={{ marginTop: "-2px" }}>
+          <Box sx={style.volumetricBox}>
+            <Grid container spacing={1}>
+              <Grid item xs={7.6}>
+                <Typography sx={style.totalweight}>Total Weight</Typography>
+              </Grid>
+              <Grid item xs={4.4}>
+                <Typography sx={style.totalweight1}>118kg</Typography>
+              </Grid>
+            </Grid>
+          </Box>
+        </Box>
+        <Box sx={{ marginTop: "-2px" }}>
+          <Box sx={style.subtotalBox}>
+            <Grid container spacing={1}>
+              <Grid item xs={7.6}>
+                <Typography sx={style.totalweight}>SUB Total</Typography>
+              </Grid>
+              <Grid item xs={4.4}>
+                <Typography sx={style.totalweight1}>₹ 2976.00</Typography>
+              </Grid>
+            </Grid>
+          </Box>
+        </Box>
+        <Box>
+          <Grid container spacing={0}>
+            <Grid item sx={1}>
+              <Box>
+                <Checkbox defaultChecked style={{ color: "#000080" }} />
+              </Box>{" "}
+            </Grid>
+            <Grid item sx={11}>
+              <Box>
+                <Typography sx={style.termsandconditions}>
+                  I agree to the terms and conditions
+                </Typography>
+              </Box>
+            </Grid>
+            <Grid item sx={12}>
+              <Box sx={{ padding: "2px 10px 0px 10px" }}>
+                <Typography sx={style.termsandconditions1}>
+                  by Checking this box, I confirm that I have read and agree to
+                  abide by the terms governing this transaction, induding refurd
+                  and cancellation policies
+                </Typography>
+              </Box>
+            </Grid>
+
+            <Grid item sx={12}>
+              <Box sx={{ padding: "2px 10px 0px 10px" }}>
+                <Button sx={style.payButon}>Pay INR 2976.00</Button>
+              </Box>
+            </Grid>
+          </Grid>
+        </Box>
       </Box>
     </Box>
   );

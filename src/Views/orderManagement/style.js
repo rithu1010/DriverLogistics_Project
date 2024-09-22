@@ -192,6 +192,14 @@ const styles = () => ({
       padding: "15px",
     },
   },
+  subtotalBox: {
+    "&.MuiBox-root": {
+      backgroundColor: "#42d3f12b",
+      border: "1px solid #1b1b1b0a",
+      marginTop: "15px",
+      padding: "15px",
+    },
+  },
   formText: {
     "&.MuiTypography-root": {
       color: "#0d0303",
@@ -290,6 +298,54 @@ const styles = () => ({
       letterSpacing: "0px",
       marginTop: "-6px",
       marginBottom: "-6px",
+    },
+  },
+  totalweight: {
+    "&.MuiTypography-root": {
+      color: "#0d0303",
+      fontWeight: "550",
+      fontSize: "14px",
+    },
+  },
+  totalweight1: {
+    "&.MuiTypography-root": {
+      color: "#0d0303",
+      fontWeight: "500",
+      fontSize: "14px",
+    },
+  },
+  termsandconditions: {
+    "&.MuiTypography-root": {
+      fontSize: "12px",
+      fontWeight: "550",
+      color: "#0d0303",
+      opacity: "0.7",
+      letterSpacing: "0px",
+      marginTop: "12px",
+      marginBottom: "-6px",
+    },
+  },
+  termsandconditions1: {
+    "&.MuiTypography-root": {
+      fontSize: "12px",
+      fontWeight: "500",
+      color: "#0d0303",
+      opacity: "0.7",
+      letterSpacing: "0px",
+      marginTop: "8px",
+      marginBottom: "-6px",
+    },
+  },
+  payButon: {
+    "&.MuiButtonBase-root": {
+      backgroundColor: "#0F8741",
+      opacity: "1",
+      height: "38px",
+      fontSize: "12px",
+      color: "#fff",
+      textAlign: "center",
+      marginTop: "27px",
+      width: "200px",
     },
   },
 });
