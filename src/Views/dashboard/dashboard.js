@@ -2,20 +2,23 @@ import React, { useState } from "react";
 import AppBar from "@mui/material/AppBar";
 import {
   Box,
-  Button,
+  Avatar,
   IconButton,
   Drawer,
   List,
   ListItem,
   ListItemText,
+  Divider,
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import { Link } from "react-router-dom";
 import Toolbar from "@mui/material/Toolbar";
 import styles from "./style";
-import Container from "@mui/material/Container";
-import Tooltip from "@mui/material/Tooltip";
+import MailOutlineIcon from "@mui/icons-material/MailOutline";
+import AddIcCallIcon from "@mui/icons-material/AddIcCall";
 import { useTheme } from "@mui/material/styles";
+import logo from "../../assets/images/favicon.jpeg";
+import OrderManagement from "../orderManagement/index";
 
 function ResponsiveAppBar() {
   const theme = useTheme();
@@ -57,18 +60,15 @@ function ResponsiveAppBar() {
 
   return (
     <>
-      <AppBar
-        style={{
-          backgroundColor: "#fff",
-          width: "100%",
-          height: "auto",
-          boxShadow: "none",
-          borderBottom: "1px solid #1b1b1b26",
-        }}
-      >
-        <Container>
+      <AppBar sx={style.Appbar}>
+        <Box sx={style.mainContainerBox}>
           <Toolbar disableGutters>
-            <Box sx={style.boxcolor}>LoginLogo</Box>
+            <img
+              src={logo}
+              alt="logo"
+              style={{ height: "35px", width: "35px" }}
+            />
+            <Box sx={style.boxcolor}>qompass</Box>
             <Box
               sx={{ flexGrow: 1, display: { xs: "none", md: "flex" }, ml: 10 }}
             ></Box>
@@ -85,17 +85,45 @@ function ResponsiveAppBar() {
                 <MenuIcon />
               </IconButton>
             </Box>
-            <Box sx={{ flexGrow: 1 }}></Box>
-
-            {/* Login icons */}
-            <Box sx={{ flexGrow: 0, ml: 2 }} component={Link} to={`/login`}>
-              <Tooltip title="Open settings">
-                <Box sx={{ color: "black", cursor: "pointer" }}>LoginLogo</Box>
-              </Tooltip>
+            <Box sx={{ flexGrow: 0, mr: 0 }}>
+              <Box sx={style.mailBox}>
+                <Box sx={style.mailBox}>
+                  <Box sx={style.mailBackgroundBox}>
+                    <AddIcCallIcon sx={style.MailIcon} />
+                  </Box>
+                  <Box sx={style.maintext}>917736172777</Box>
+                </Box>
+                <Box sx={style.mailBox}>
+                  <Box sx={style.mailBackgroundBox}>
+                    <MailOutlineIcon sx={style.MailIcon} />
+                  </Box>
+                  <Box sx={style.maintext}>itsupport@Driverligistics.in</Box>
+                </Box>
+                <Box>
+                  <Avatar
+                    sx={{
+                      backgroundColor: "#3933e7",
+                      color: "#3933e7",
+                      cursor: "pointer",
+                      height: "26px",
+                      width: "26px",
+                      marginTop: "2px",
+                    }}
+                  >
+                    g
+                  </Avatar>
+                </Box>
+              </Box>
             </Box>
           </Toolbar>
-        </Container>
+        </Box>
       </AppBar>
+      <Box sx={style.ordermanageBox}>
+        <Box sx={style.ordermanageText}>Order Management System</Box>
+        <Box sx={style.ordermanageText}>Welcome Guest</Box>
+      </Box>
+      <Divider sx={style.Divider} />
+      <OrderManagement />
       <Drawer anchor="left" open={drawerOpen} onClose={toggleDrawer(false)}>
         {drawer}
       </Drawer>
