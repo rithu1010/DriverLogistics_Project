@@ -21,7 +21,8 @@ import ErrorOutlineIcon from "@mui/icons-material/ErrorOutline";
 
 import styles from "./style";
 import { useTheme } from "@mui/material/styles";
-import EditOrderSummaryModal from "./editorderSummary";
+import EditOrderSummaryModal from "./editorderpickupSummary";
+import EditDeliversummary from "./editorderdeliverysummary";
 
 const ProductCategory = () => {
   const theme = useTheme();
@@ -29,6 +30,7 @@ const ProductCategory = () => {
 
   const [expanded, setExpanded] = useState("panel1");
   const [open, setOpen] = useState(false);
+  const [opendelivery, setOpendelivery] = useState(false);
 
   const handleChange = (panel) => (event, isExpanded) => {
     setExpanded(isExpanded ? panel : false);
@@ -36,6 +38,9 @@ const ProductCategory = () => {
 
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
+
+  const handleOpendelivery = () => setOpendelivery(true);
+  const handleClosedelivery = () => setOpendelivery(false);
   return (
     <Box>
       <Box sx={style.ordersummaryBox}>
@@ -109,7 +114,10 @@ const ProductCategory = () => {
                   <Box>
                     <Typography sx={style.mainTitlesummary}>
                       Delivery Address{""}
-                      <span style={{ color: "#3933e7", cursor: "pointer" }}>
+                      <span
+                        style={{ color: "#3933e7", cursor: "pointer" }}
+                        onClick={handleOpendelivery}
+                      >
                         &nbsp;(Edit)
                       </span>
                     </Typography>
@@ -373,6 +381,10 @@ const ProductCategory = () => {
         </Box>
       </Box>
       <EditOrderSummaryModal open={open} handleClose={handleClose} />
+      <EditDeliversummary
+        open={opendelivery}
+        handleClose={handleClosedelivery}
+      />
     </Box>
   );
 };

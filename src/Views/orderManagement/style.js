@@ -200,6 +200,16 @@ const styles = () => ({
       padding: "15px",
     },
   },
+  title: {
+    "&.MuiTypography-root": {
+      color: "#0d0303",
+      fontSize: "16px",
+      fontWeight: "550",
+      opacity: "1",
+      letterSpacing: "0px",
+      marginTop: "-12px",
+    },
+  },
   formText: {
     "&.MuiTypography-root": {
       color: "#0d0303",
@@ -219,6 +229,11 @@ const styles = () => ({
       letterSpacing: "0px",
       marginTop: "8px",
     },
+  },
+  formlabeltext: {
+    fontSize: "12px",
+    color: "#0d0303",
+    marginBottom: "4px",
   },
   adcOrderBox: {
     "&.MuiBox-root": {
@@ -346,6 +361,7 @@ const styles = () => ({
       textAlign: "center",
       marginTop: "27px",
       width: "200px",
+      textTransform: "normal",
     },
   },
 });
