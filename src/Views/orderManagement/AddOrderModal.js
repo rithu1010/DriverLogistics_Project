@@ -53,7 +53,9 @@ const DeliveryAddress = ({ open, handleClose }) => {
 
                 <Box sx={styless.OrderAdd}>Your Order Added</Box>
                 <Box sx={styless.displayFlex}>
-                  <Box sx={styless.okayButton}>Ok</Box>
+                  <Box sx={styless.okayButton} onClick={handleClose}>
+                    Ok
+                  </Box>
                 </Box>
               </Box>
             </Grid>

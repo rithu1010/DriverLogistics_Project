@@ -409,8 +409,9 @@ const styles = () => ({
       width: "50px",
       borderRadius: "8px",
       textAlign: "center",
-      padding: "5px 5px 5px 5px",
+      padding: "8px 5px 8px 5px",
       marginBottom: "30px",
+      cursor: "pointer",
     },
   },
   displayFlex: {
