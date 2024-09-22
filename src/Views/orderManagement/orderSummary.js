@@ -21,16 +21,21 @@ import ErrorOutlineIcon from "@mui/icons-material/ErrorOutline";
 
 import styles from "./style";
 import { useTheme } from "@mui/material/styles";
+import EditOrderSummaryModal from "./editorderSummary";
 
 const ProductCategory = () => {
   const theme = useTheme();
   const style = styles(theme);
 
   const [expanded, setExpanded] = useState("panel1");
+  const [open, setOpen] = useState(false);
 
   const handleChange = (panel) => (event, isExpanded) => {
     setExpanded(isExpanded ? panel : false);
   };
+
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
   return (
     <Box>
       <Box sx={style.ordersummaryBox}>
@@ -65,6 +70,13 @@ const ProductCategory = () => {
                   <Box>
                     <Typography sx={style.mainTitlesummary}>
                       Pickup Address
+                      {""}
+                      <span
+                        style={{ color: "#3933e7", cursor: "pointer" }}
+                        onClick={handleOpen}
+                      >
+                        &nbsp;(Edit)
+                      </span>
                     </Typography>
                     <Typography sx={style.subTitlesummary}>
                       Burger St, near Police Staticnort Nagar, Fort Kachi, Koch,
@@ -96,7 +108,10 @@ const ProductCategory = () => {
                   />
                   <Box>
                     <Typography sx={style.mainTitlesummary}>
-                      Delivery Address (Edit)
+                      Delivery Address{""}
+                      <span style={{ color: "#3933e7", cursor: "pointer" }}>
+                        &nbsp;(Edit)
+                      </span>
                     </Typography>
                     <Typography sx={style.subTitlesummary}>
                       G/40, Mattanchery Cochin, Jew Town Rd, Emakulam, Kochi,
@@ -357,6 +372,7 @@ const ProductCategory = () => {
           </Grid>
         </Box>
       </Box>
+      <EditOrderSummaryModal open={open} handleClose={handleClose} />
     </Box>
   );
 };

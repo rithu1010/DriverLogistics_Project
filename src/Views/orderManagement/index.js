@@ -1,7 +1,5 @@
 import React from "react";
 import { Box, Typography, Divider, Grid } from "@mui/material";
-// import Grid from "@mui/material/Grid";
-
 import styles from "./style";
 import { useTheme } from "@mui/material/styles";
 import ProductCategory from "./selectproductCatogory";
