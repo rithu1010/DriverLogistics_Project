@@ -8,7 +8,11 @@ const styles = () => ({
     borderBottom: "1px solid #1b1b1b17",
   },
   boxcolor: {
-    color: "black",
+    color: "#095EF8",
+    fontSize: "17px",
+    FontWeight: "600",
+    marginLeft: "-8px",
+    display: "grid",
   },
   mailBox: {
     "&.MuiBox-root": {

@@ -66,25 +66,25 @@ function ResponsiveAppBar() {
             <img
               src={logo}
               alt="logo"
-              style={{ height: "35px", width: "35px" }}
+              style={{ height: "41px", width: "41px" }}
             />
-            <Box sx={style.boxcolor}>qompass</Box>
+            <Box sx={style.boxcolor}>
+              <span style={{ color: "#095ef8" }}>Qompass</span>
+              <span
+                style={{
+                  color: "#095ef8",
+                  fontSize: "8px",
+                  marginLeft: "58px",
+                }}
+              >
+                Now
+              </span>
+            </Box>
             <Box
               sx={{ flexGrow: 1, display: { xs: "none", md: "flex" }, ml: 10 }}
             ></Box>
 
-            <Box sx={{ display: { xs: "flex", md: "none" } }}>
-              <IconButton
-                size="large"
-                aria-label="menu"
-                aria-controls="menu-appbar"
-                aria-haspopup="true"
-                onClick={toggleDrawer(true)}
-                color="black"
-              >
-                <MenuIcon />
-              </IconButton>
-            </Box>
+            <Box sx={{ display: { xs: "flex", md: "none" } }}></Box>
             <Box sx={{ flexGrow: 0, mr: 0 }}>
               <Box sx={style.mailBox}>
                 <Box sx={style.mailBox}>
