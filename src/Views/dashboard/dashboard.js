@@ -69,12 +69,13 @@ function ResponsiveAppBar() {
               style={{ height: "41px", width: "41px" }}
             />
             <Box sx={style.boxcolor}>
-              <span style={{ color: "#095ef8" }}>Qompass</span>
+              <span style={{ color: "#024bce" }}>Qompass</span>
               <span
                 style={{
-                  color: "#095ef8",
-                  fontSize: "8px",
-                  marginLeft: "58px",
+                  color: "#024bce",
+                  fontSize: "7px",
+                  marginLeft: "62px",
+                  marginTop: "-4px",
                 }}
               >
                 Now
