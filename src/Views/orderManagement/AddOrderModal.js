@@ -4,7 +4,7 @@ import styles from "./style";
 import { useTheme } from "@mui/material/styles";
 import DoneIcon from "@mui/icons-material/Done";
 
-const DeliveryAddress = ({ open, handleClose }) => {
+const AddOrderModal = ({ open, handleClose }) => {
   const theme = useTheme();
   const styless = styles(theme);
 
@@ -74,4 +74,4 @@ const DeliveryAddress = ({ open, handleClose }) => {
   );
 };
 
-export default DeliveryAddress;
+export default AddOrderModal;

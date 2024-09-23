@@ -18,7 +18,7 @@ import { useTheme } from "@mui/material/styles";
 import CancelPresentationIcon from "@mui/icons-material/CancelPresentation";
 import BookingImg from "../../assets/images/booking.png";
 
-const DeliveryAddress = ({ open, handleClose }) => {
+const BookingConfirmation = ({ open, handleClose }) => {
   const theme = useTheme();
   const style = styles(theme);
 
@@ -329,4 +329,4 @@ const DeliveryAddress = ({ open, handleClose }) => {
   );
 };
 
-export default DeliveryAddress;
+export default BookingConfirmation;
