@@ -1,12 +1,20 @@
 import React from "react";
-import { Box, Typography, Grid } from "@mui/material";
+import { Box, Typography, Grid, IconButton } from "@mui/material";
 import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
 import TableCell from "@mui/material/TableCell";
 import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
-import Paper from "@mui/material/Paper";
+import SearchIcon from "@mui/icons-material/Search";
+import AddIcon from "@mui/icons-material/Add";
+import ContentCopyIcon from "@mui/icons-material/ContentCopy";
+import SaveIcon from "@mui/icons-material/Save";
+import AttachFileIcon from "@mui/icons-material/AttachFile";
+import DeleteOutlineIcon from "@mui/icons-material/DeleteOutline";
+import AutorenewIcon from "@mui/icons-material/Autorenew";
+import SettingsIcon from "@mui/icons-material/Settings";
+import MoreVertIcon from "@mui/icons-material/MoreVert";
 
 import styles from "./style";
 import { useTheme } from "@mui/material/styles";
@@ -31,21 +39,46 @@ const OrderOverview = () => {
       <Grid container spacing={1}>
         <Grid item xs={12}>
           <Box sx={style.OrderManagement}>
-            <Box sx={style.displayflex}>
-              <Box>
+            <Box sx={style.ordermanageTableiconflexBox}>
+              <Box sx={style.overviewBox2}>
                 <Typography sx={style.OrderManagementText}>
                   Order Overview
                 </Typography>
               </Box>
-              <Box sx={style.display}>
-                <Typography sx={style.OrderNewText}>New Order</Typography>
-                <span style={style.plusicon}>+</span>
+              <Box>
+                <IconButton sx={style.tableIcon}>
+                  <SearchIcon sx={style.tableIconsvg} />
+                </IconButton>
+                <IconButton sx={style.tableIcon}>
+                  <AddIcon sx={style.tableIconsvg} />
+                </IconButton>
+                <IconButton sx={style.tableIcon}>
+                  <ContentCopyIcon sx={style.tableIconsvg} />
+                </IconButton>
+                <IconButton sx={style.tableIcon}>
+                  <SaveIcon sx={style.tableIconsvg} />
+                </IconButton>
+                <IconButton sx={style.tableIcon}>
+                  <AttachFileIcon sx={style.tableIconsvg} />
+                </IconButton>
+                <IconButton sx={style.tableIcon}>
+                  <DeleteOutlineIcon sx={style.tableIconsvg} />
+                </IconButton>
+                <IconButton sx={style.tableIcon}>
+                  <AutorenewIcon sx={style.tableIconsvg} />
+                </IconButton>
+                <IconButton sx={style.tableIcon}>
+                  <SettingsIcon sx={style.tableIconsvg} />
+                </IconButton>
+                <IconButton sx={style.tableIcon}>
+                  <MoreVertIcon sx={style.tableIconsvg} />
+                </IconButton>
               </Box>
             </Box>
             <Box>
               <TableContainer>
                 <Table
-                  sx={{ minWidth: 650, marginTop: "15px" }}
+                  sx={{ minWidth: 650, marginTop: "5px" }}
                   aria-label="simple table"
                 >
                   <TableHead sx={{ backgroundColor: "#f4f9fc" }}>

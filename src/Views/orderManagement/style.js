@@ -528,6 +528,58 @@ const styles = () => ({
       cursor: "pointer",
     },
   },
+  tableIcon: {
+    "&.MuiIconButton-root": {
+      width: 25,
+      height: 25,
+      mr: 1,
+      border: "1px solid #ccc",
+      backgroundColor: "#f4f9fc",
+      padding: "5px",
+      cursor: "pointer",
+      borderRadius: "4px",
+    },
+  },
+  tableIconsvg: {
+    "&.MuiSvgIcon-root": {
+      fontSize: 20,
+      color: "#363739",
+      cursor: "pointer",
+    },
+  },
+  ordermanageTableiconflexBox: {
+    "&.MuiBox-root": {
+      display: { xs: "grid", sm: "flex", md: "flex", lg: "flex", xl: "flex" },
+      justifyContent: {
+        xs: "center",
+        sm: "space-between",
+        md: "space-between",
+        lg: "space-between",
+        xl: "space-between",
+      },
+      padding: "8px 10px 15px 15px",
+      alignItems: "center",
+    },
+  },
+  overviewBox2: {
+    "&.MuiBox-root": {
+      display: { xs: "grid", sm: "flex", md: "flex", lg: "flex", xl: "flex" },
+      justifyContent: {
+        xs: "center",
+        sm: "space-between",
+        md: "space-between",
+        lg: "space-between",
+        xl: "space-between",
+      },
+      marginBottom: {
+        xs: "12px",
+        sm: "12px",
+        md: "0",
+        lg: "0",
+        xl: "0",
+      },
+    },
+  },
 });
 
 export default styles;
