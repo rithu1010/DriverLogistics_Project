@@ -8,6 +8,8 @@ import { useTheme } from "@mui/material/styles";
 import SpeakerIcon from "@mui/icons-material/Speaker";
 import OrderOverview from "./orderOverview";
 import AddOrdermodal from "./AddOrderModal";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const ProductCategory = () => {
   const theme = useTheme();
@@ -30,7 +32,25 @@ const ProductCategory = () => {
   });
   const [orderData, setOrderData] = useState([]);
 
-  const handleorderOpen = () => {
+  const handleOrderOpen = () => {
+    // Check if all required fields are filled
+    if (
+      !selectedCategory ||
+      !selectedLoadType ||
+      !volumetricData.length ||
+      !volumetricData.breadth ||
+      !volumetricData.height ||
+      !volumetricData.weight ||
+      !volumetricData.invoice
+    ) {
+      toast.error("All fields are required!", {
+        position: "top-right",
+        autoClose: 3000,
+      });
+      return;
+    }
+
+    // If validation passes, proceed with adding the order
     setorderOpen(true);
     const order = {
       category: selectedCategory,
@@ -38,6 +58,8 @@ const ProductCategory = () => {
       ...volumetricData,
     };
     setOrderData((prevOrders) => [...prevOrders, order]);
+
+    // Reset form fields
     setSelectedCategory("");
     setSelectedLoadType("");
     setVolumetricData({
@@ -48,6 +70,11 @@ const ProductCategory = () => {
       invoice: "",
     });
     setExpanded("panel1");
+
+    toast.success("Order added successfully!", {
+      position: "top-right",
+      autoClose: 3000,
+    });
   };
 
   const handleorderClose = () => {
@@ -328,7 +355,7 @@ const ProductCategory = () => {
               }}
             >
               <Box>
-                <Box sx={style.adcOrderBox} onClick={handleorderOpen}>
+                <Box sx={style.adcOrderBox} onClick={handleOrderOpen}>
                   <Typography sx={style.OrderNewText}>Add Order</Typography>
                   <span style={style.plusicon}>+</span>
                 </Box>
@@ -341,6 +368,7 @@ const ProductCategory = () => {
         <Box>
           <OrderOverview orderData={orderData} />
         </Box>
+        <ToastContainer />
       </Box>
       <AddOrdermodal open={orderOpen} handleClose={handleorderClose} />
     </Box>
