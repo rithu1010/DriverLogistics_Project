@@ -94,7 +94,7 @@ const ProductCategory = () => {
           expanded={expanded === "panel1"}
           onChange={handleChange("panel1")}
           sx={{
-            backgroundColor: expanded === "panel1" ? "transparent" : "#f4f9fc",
+            backgroundColor: expanded === "panel1" ? "#ffffff" : "#f4f9fc",
             boxShadow:
               expanded === "panel1" ? "2px 3px 4px 2px #1b1b1b17" : "none",
 
@@ -128,8 +128,8 @@ const ProductCategory = () => {
                     style={{
                       backgroundColor:
                         selectedCategory === option?.name
-                          ? "#33fff30f"
-                          : "white",
+                          ? "#F4F9FC"
+                          : "#FEFEFE",
                     }}
                   >
                     <Box style={{ display: "flex", justifyContent: "center" }}>
@@ -153,8 +153,7 @@ const ProductCategory = () => {
             expanded={expanded === "panel2"}
             onChange={handleChange("panel2")}
             sx={{
-              backgroundColor:
-                expanded === "panel2" ? "transparent" : "#f4f9fc",
+              backgroundColor: expanded === "panel2" ? "#ffffff" : "#f4f9fc",
               boxShadow:
                 expanded === "panel2" ? "2px 3px 4px 2px #1b1b1b17" : "none",
               ...style.accordian,
@@ -187,8 +186,8 @@ const ProductCategory = () => {
                       style={{
                         backgroundColor:
                           selectedLoadType === option?.name
-                            ? "#33fff30f"
-                            : "white",
+                            ? "#F4F9FC"
+                            : "#FEFEFE",
                       }}
                     >
                       <Box
