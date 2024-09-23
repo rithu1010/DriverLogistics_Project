@@ -381,6 +381,7 @@ const styles = () => ({
       letterSpacing: "0px",
       marginTop: "-6px",
       marginBottom: "-6px",
+      marginLeft: "2px",
     },
   },
 

@@ -214,7 +214,7 @@ const ProductCategory = () => {
                 <TableContainer>
                   <Table>
                     <TableBody>
-                      <TableRow sx={{ borderTop: "1px solid #1b1b1b0a" }}>
+                      <TableRow sx={{ border: "1px solid #1b1b1b0a" }}>
                         <TableCell
                           sx={{
                             borderRight: "1px solid #1b1b1b0a",
@@ -233,7 +233,12 @@ const ProductCategory = () => {
                         </TableCell>
                       </TableRow>
 
-                      <TableRow>
+                      <TableRow
+                        sx={{
+                          borderRight: "1px solid #1b1b1b0a",
+                          borderLeft: "1px solid #1b1b1b0a",
+                        }}
+                      >
                         <TableCell
                           sx={{
                             borderRight: "1px solid #1b1b1b0a",
@@ -251,7 +256,12 @@ const ProductCategory = () => {
                           </Typography>
                         </TableCell>
                       </TableRow>
-                      <TableRow>
+                      <TableRow
+                        sx={{
+                          borderRight: "1px solid #1b1b1b0a",
+                          borderLeft: "1px solid #1b1b1b0a",
+                        }}
+                      >
                         <TableCell
                           sx={{
                             borderRight: "1px solid #1b1b1b0a",
@@ -269,7 +279,12 @@ const ProductCategory = () => {
                           </Typography>
                         </TableCell>
                       </TableRow>
-                      <TableRow>
+                      <TableRow
+                        sx={{
+                          borderRight: "1px solid #1b1b1b0a",
+                          borderLeft: "1px solid #1b1b1b0a",
+                        }}
+                      >
                         <TableCell
                           sx={{
                             borderRight: "1px solid #1b1b1b0a",
@@ -287,7 +302,12 @@ const ProductCategory = () => {
                           </Typography>
                         </TableCell>
                       </TableRow>
-                      <TableRow>
+                      <TableRow
+                        sx={{
+                          borderRight: "1px solid #1b1b1b0a",
+                          borderLeft: "1px solid #1b1b1b0a",
+                        }}
+                      >
                         <TableCell
                           sx={{
                             borderRight: "1px solid #1b1b1b0a",
@@ -305,7 +325,12 @@ const ProductCategory = () => {
                           </Typography>
                         </TableCell>
                       </TableRow>
-                      <TableRow>
+                      <TableRow
+                        sx={{
+                          borderRight: "1px solid #1b1b1b0a",
+                          borderLeft: "1px solid #1b1b1b0a",
+                        }}
+                      >
                         <TableCell
                           sx={{
                             borderRight: "1px solid #1b1b1b0a",
