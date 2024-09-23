@@ -77,7 +77,7 @@ const ProductCategory = () => {
                       Pickup Address
                       {""}
                       <span
-                        style={{ color: "#3933e7", cursor: "pointer" }}
+                        style={{ color: "#3F6FAF", cursor: "pointer" }}
                         onClick={handleOpen}
                       >
                         &nbsp;(Edit)
@@ -115,7 +115,7 @@ const ProductCategory = () => {
                     <Typography sx={style.mainTitlesummary}>
                       Delivery Address{""}
                       <span
-                        style={{ color: "#3933e7", cursor: "pointer" }}
+                        style={{ color: "#3F6FAF", cursor: "pointer" }}
                         onClick={handleOpendelivery}
                       >
                         &nbsp;(Edit)
@@ -139,7 +139,7 @@ const ProductCategory = () => {
                       Product category
                     </Typography>
                     <Typography sx={style.subTitlesummary}>
-                      Electronics
+                      <Box sx={style.LoadCategoryBox}> Electronics</Box>
                     </Typography>
                   </Box>
                   <Box>
@@ -147,7 +147,7 @@ const ProductCategory = () => {
                       Load category
                     </Typography>
                     <Typography sx={style.subTitlesummary}>
-                      Cartoon Box
+                      <Box sx={style.LoadCategoryBox}>Cartoon Box</Box>
                     </Typography>
                   </Box>
                 </Box>

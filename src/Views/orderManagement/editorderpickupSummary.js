@@ -346,7 +346,12 @@ const PickupAddress = ({ open, handleClose }) => {
                       alignItems: "center",
                     }}
                   >
-                    <Button type="submit" sx={styless.payButon} fullWidth>
+                    <Button
+                      type="submit"
+                      sx={styless.payButon}
+                      fullWidth
+                      onClick={handleClose}
+                    >
                       Add Details
                     </Button>
                   </Grid>

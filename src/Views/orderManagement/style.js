@@ -214,6 +214,13 @@ const styles = () => ({
       marginTop: "8px",
     },
   },
+  inputField: {
+    "& .MuiInputBase-input.MuiOutlinedInput-input": {
+      borderRadius: "0px !important",
+      color: "#0d0303",
+      backgroundColor: "#fff",
+    },
+  },
   volumetricBox: {
     "&.MuiBox-root": {
       backgroundColor: "#f4f9fc",
@@ -381,6 +388,18 @@ const styles = () => ({
       marginBottom: "-6px",
     },
   },
+  LoadCategoryBox: {
+    "&.MuiBox-root": {
+      backgroundColor: "#E0EBFD",
+      color: "#0d0303",
+      width: "fit-content",
+      borderRadius: "8px",
+      textAlign: "center",
+      padding: "5px 10px 5px 10px",
+      marginBottom: "10px",
+      cursor: "pointer",
+    },
+  },
   payButon: {
     "&.MuiButtonBase-root": {
       backgroundColor: "#0D824D",
@@ -392,6 +411,7 @@ const styles = () => ({
       marginTop: "27px",
       width: "200px",
       textTransform: "normal",
+      cursor: "pointer",
     },
   },
   doneiconBox: {
