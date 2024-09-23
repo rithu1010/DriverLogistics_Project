@@ -32,7 +32,15 @@ const DeliveryAddress = ({ open, handleClose }) => {
 
   return (
     <Box>
-      <Modal open={open} onClose={handleClose} closeAfterTransition>
+      <Modal
+        open={open}
+        onClose={handleClose}
+        closeAfterTransition
+        BackdropProps={{
+          sx: { backgroundColor: "#1566db36" },
+          onClick: (event) => event.stopPropagation(),
+        }}
+      >
         <Box sx={style.modalBox}>
           <Grid container spacing={1}>
             <Grid

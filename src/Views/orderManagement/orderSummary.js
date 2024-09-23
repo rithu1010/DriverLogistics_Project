@@ -352,7 +352,7 @@ const ProductCategory = () => {
           <Grid container spacing={0}>
             <Grid item sx={1}>
               <Box>
-                <Checkbox defaultChecked style={{ color: "#000080" }} />
+                <Checkbox defaultChecked style={{ color: "#1667DA" }} />
               </Box>{" "}
             </Grid>
             <Grid item sx={11}>

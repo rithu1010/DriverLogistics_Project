@@ -114,7 +114,7 @@ const styles = () => ({
       border: "1px solid #1b1b1b0a",
       width: "100%",
       boxShadow: "none",
-      backgroundColor: "#33fff30f",
+      backgroundColor: "#f4f9fc",
       "&::before": {
         position: "absolute",
         opacity: 0.4,
@@ -134,7 +134,7 @@ const styles = () => ({
       border: "1px solid #1b1b1b0a",
       width: "100%",
       boxShadow: "none",
-      backgroundColor: "#33fff30f",
+      backgroundColor: "#f4f9fc",
       "&::before": {
         position: "absolute",
         opacity: 0.4,
@@ -187,7 +187,7 @@ const styles = () => ({
   },
   volumetricBox: {
     "&.MuiBox-root": {
-      backgroundColor: "#33fff30f",
+      backgroundColor: "#f4f9fc",
       border: "1px solid #1b1b1b0a",
       marginTop: "15px",
       padding: "15px",
@@ -195,7 +195,7 @@ const styles = () => ({
   },
   subtotalBox: {
     "&.MuiBox-root": {
-      backgroundColor: "#42d3f12b",
+      backgroundColor: "#E7F5FE",
       border: "1px solid #1b1b1b0a",
       marginTop: "15px",
       padding: "15px",
@@ -354,7 +354,7 @@ const styles = () => ({
   },
   payButon: {
     "&.MuiButtonBase-root": {
-      backgroundColor: "#0F8741",
+      backgroundColor: "#0D824D",
       opacity: "1",
       height: "38px",
       fontSize: "12px",

@@ -94,8 +94,7 @@ const ProductCategory = () => {
           expanded={expanded === "panel1"}
           onChange={handleChange("panel1")}
           sx={{
-            backgroundColor:
-              expanded === "panel1" ? "transparent" : "#33fff30f",
+            backgroundColor: expanded === "panel1" ? "transparent" : "#f4f9fc",
             boxShadow:
               expanded === "panel1" ? "2px 3px 4px 2px #1b1b1b17" : "none",
 
@@ -155,7 +154,7 @@ const ProductCategory = () => {
             onChange={handleChange("panel2")}
             sx={{
               backgroundColor:
-                expanded === "panel2" ? "transparent" : "#33fff30f",
+                expanded === "panel2" ? "transparent" : "#f4f9fc",
               boxShadow:
                 expanded === "panel2" ? "2px 3px 4px 2px #1b1b1b17" : "none",
               ...style.accordian,
