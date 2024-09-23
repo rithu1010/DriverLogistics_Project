@@ -67,6 +67,9 @@ const OrderOverview = ({ orderData }) => {
             <Box>
               <TableContainer
                 sx={{
+                  overflowY: "auto",
+                  maxHeight: "calc(98vh - 300px)",
+                  scrollBehavior: "smooth",
                   "&::-webkit-scrollbar-track": {
                     backgroundColor: "#f1f1f1",
                   },
@@ -147,13 +150,21 @@ const OrderOverview = ({ orderData }) => {
                           <TableCell
                             sx={{
                               borderBottom: "none",
-                              width: "100%",
-                              display: "flex",
-                              justifyContent: "center",
                             }}
-                            colSpan={9}
+                            colSpan={8}
                           >
-                            No Data Available
+                            <Grid container spacing={1}>
+                              <Grid
+                                item
+                                xs={12}
+                                sx={{
+                                  display: "flex",
+                                  justifyContent: "center",
+                                }}
+                              >
+                                No Data Available
+                              </Grid>
+                            </Grid>
                           </TableCell>
                         </TableRow>
                       </>
