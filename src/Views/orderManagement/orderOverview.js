@@ -22,7 +22,6 @@ import { useTheme } from "@mui/material/styles";
 const OrderOverview = ({ orderData }) => {
   const theme = useTheme();
   const style = styles(theme);
-  console.log("orderDadddta", orderData);
 
   return (
     <Box sx={{ marginTop: "15px" }}>
@@ -106,39 +105,59 @@ const OrderOverview = ({ orderData }) => {
                     </TableRow>
                   </TableHead>
                   <TableBody>
-                    {orderData.map((row, index) => (
-                      <TableRow
-                        key={index}
-                        sx={{
-                          "&:last-child td, &:last-child th": { border: 0 },
-                        }}
-                      >
-                        <TableCell sx={style.tablecelltdrow}>
-                          {index + 1}
-                        </TableCell>
-                        <TableCell sx={style.tablecelltdrow}>
-                          {row.invoice || "--"}
-                        </TableCell>
-                        <TableCell sx={style.tablecelltdrow}>
-                          {row.loadType || "--"}
-                        </TableCell>
-                        <TableCell sx={style.tablecelltdrow}>
-                          {row.length || "--"}
-                        </TableCell>
-                        <TableCell sx={style.tablecelltdrow}>
-                          {row.weight || "--"}
-                        </TableCell>
-                        <TableCell sx={style.tablecelltdrow}>
-                          {row.weight || "--"}
-                        </TableCell>
-                        <TableCell sx={style.tablecelltdrow}>
-                          {row.category || "--"}
-                        </TableCell>
-                        <TableCell sx={style.tablecelltdrow}>
-                          {row.height || "--"}
-                        </TableCell>
-                      </TableRow>
-                    ))}
+                    {orderData && orderData?.length > 0 ? (
+                      <>
+                        {orderData.map((row, index) => (
+                          <TableRow
+                            key={index}
+                            sx={{
+                              "&:last-child td, &:last-child th": { border: 0 },
+                            }}
+                          >
+                            <TableCell sx={style.tablecelltdrow}>
+                              {index + 1}
+                            </TableCell>
+                            <TableCell sx={style.tablecelltdrow}>
+                              {row.invoice || "--"}
+                            </TableCell>
+                            <TableCell sx={style.tablecelltdrow}>
+                              {row.loadType || "--"}
+                            </TableCell>
+                            <TableCell sx={style.tablecelltdrow}>
+                              {row.length || "--"}
+                            </TableCell>
+                            <TableCell sx={style.tablecelltdrow}>
+                              {row.weight || "--"}
+                            </TableCell>
+                            <TableCell sx={style.tablecelltdrow}>
+                              {row.weight || "--"}
+                            </TableCell>
+                            <TableCell sx={style.tablecelltdrow}>
+                              {row.category || "--"}
+                            </TableCell>
+                            <TableCell sx={style.tablecelltdrow}>
+                              {row.height || "--"}
+                            </TableCell>
+                          </TableRow>
+                        ))}
+                      </>
+                    ) : (
+                      <>
+                        <TableRow>
+                          <TableCell
+                            sx={{
+                              borderBottom: "none",
+                              width: "100%",
+                              display: "flex",
+                              justifyContent: "center",
+                            }}
+                            colSpan={9}
+                          >
+                            No Data Available
+                          </TableCell>
+                        </TableRow>
+                      </>
+                    )}
                   </TableBody>
                 </Table>
               </TableContainer>

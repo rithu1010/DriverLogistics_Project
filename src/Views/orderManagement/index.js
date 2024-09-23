@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Box, Typography, Divider, Grid } from "@mui/material";
 import styles from "./style";
 import { useTheme } from "@mui/material/styles";
@@ -8,6 +8,8 @@ import OrderSummary from "./orderSummary";
 const OrderManagement = () => {
   const theme = useTheme();
   const style = styles(theme);
+  const [orderData, setOrderData] = useState([]);
+
   return (
     <Box>
       <Box sx={style.orderBox}>
@@ -29,12 +31,15 @@ const OrderManagement = () => {
               </Box>
               <Divider sx={style.Divider} />
               <Box>
-                <ProductCategory />
+                <ProductCategory
+                  setOrderData={setOrderData}
+                  orderData={orderData}
+                />
               </Box>
             </Box>
           </Grid>
           <Grid item xs={12} lg={3.5} xl={3.5} md={3.5} sm={12}>
-            <OrderSummary />
+            <OrderSummary orderData={orderData} />
           </Grid>
         </Grid>
       </Box>

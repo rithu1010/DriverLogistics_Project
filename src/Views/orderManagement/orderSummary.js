@@ -25,7 +25,7 @@ import EditOrderSummaryModal from "./editorderpickupSummary";
 import EditDeliversummary from "./editorderdeliverysummary";
 import BookingConfirmModal from "./BookingConfirmedModal";
 
-const ProductCategory = () => {
+const ProductCategory = ({ orderData }) => {
   const theme = useTheme();
   const style = styles(theme);
 
@@ -81,7 +81,6 @@ const ProductCategory = () => {
                   <Box>
                     <Typography sx={style.mainTitlesummary}>
                       Pickup Address
-                      {""}
                       <span
                         style={{ color: "#3F6FAF", cursor: "pointer" }}
                         onClick={handleOpen}
@@ -145,7 +144,9 @@ const ProductCategory = () => {
                       Product category
                     </Typography>
                     <Typography sx={style.subTitlesummary}>
-                      <Box sx={style.LoadCategoryBox}> Electronics</Box>
+                      <Box sx={style.LoadCategoryBox}>
+                        {orderData[0]?.category || "Electronics"}
+                      </Box>
                     </Typography>
                   </Box>
                   <Box>
@@ -153,7 +154,9 @@ const ProductCategory = () => {
                       Load category
                     </Typography>
                     <Typography sx={style.subTitlesummary}>
-                      <Box sx={style.LoadCategoryBox}>Cartoon Box</Box>
+                      <Box sx={style.LoadCategoryBox}>
+                        {orderData[0]?.loadType || "Cartoon Box"}
+                      </Box>
                     </Typography>
                   </Box>
                 </Box>

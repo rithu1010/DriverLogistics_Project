@@ -11,7 +11,7 @@ import AddOrdermodal from "./AddOrderModal";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-const ProductCategory = () => {
+const ProductCategory = ({ setOrderData, orderData }) => {
   const theme = useTheme();
   const style = styles(theme);
 
@@ -30,7 +30,6 @@ const ProductCategory = () => {
     weight: "",
     invoice: "",
   });
-  const [orderData, setOrderData] = useState([]);
 
   const handleOrderOpen = () => {
     // Check if all required fields are filled
