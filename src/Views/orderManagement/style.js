@@ -383,6 +383,7 @@ const styles = () => ({
       marginBottom: "-6px",
     },
   },
+
   tablecellmain1: {
     "&.MuiTypography-root": {
       fontSize: "13px",
@@ -516,15 +517,17 @@ const styles = () => ({
   // Booking Confirmed //
   cmnDrawerPadding: {
     "&.MuiBox-root": {
-      padding: "25px 50px 30px 50px",
+      padding: "5px 0px 10px 0px",
     },
   },
   cmnDrawerCloseIcon: {
     "&.MuiSvgIcon-root": {
       float: "right",
       color: "#0d0303",
-      paddingTop: "15px",
       cursor: "pointer",
+      marginTop: "-10px",
+      fontSize: "18px",
+      opacity: "0.8",
       // fontSize: '50px',
     },
   },
@@ -537,12 +540,11 @@ const styles = () => ({
   },
   cmnDrawerHeadingText: {
     "&.MuiTypography-root": {
-      fontWeight: "800",
-      opacity: "1",
+      fontWeight: "500",
+      opacity: "0.8",
       fontSize: "13px",
       color: "#0d0303",
-      marginTop: "15px",
-      textTransform: "capitalize",
+      marginTop: "-5px",
       wordWrap: "break-word",
       overflow: "hidden",
       textOverflow: "ellipsis",
@@ -617,6 +619,87 @@ const styles = () => ({
       opacity: "1",
       lineHeight: "1rem",
       whiteSpace: "nowrap",
+    },
+  },
+  BookingConfirmBox: {
+    "&.MuiBox-root": {
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "center",
+    },
+  },
+  bookingconfirmedText: {
+    "&.MuiTypography-root": {
+      fontWeight: "600",
+      opacity: "0.8",
+      fontSize: "18px",
+      color: "#0d0303",
+      marginTop: "10px",
+      wordWrap: "break-word",
+      overflow: "hidden",
+      textOverflow: "ellipsis",
+      whiteSpace: "nowrap",
+    },
+  },
+  bookingconfirmedsubText: {
+    "&.MuiTypography-root": {
+      fontWeight: "500",
+      opacity: "0.4",
+      fontSize: "14px",
+      color: "#0d0303",
+      marginTop: "5px",
+      wordWrap: "break-word",
+      overflow: "hidden",
+      textOverflow: "ellipsis",
+      whiteSpace: "nowrap",
+    },
+  },
+  tablecellmain2: {
+    "&.MuiTypography-root": {
+      fontSize: "14px",
+      fontWeight: "550",
+      color: "#3F6FAF",
+      opacity: "1",
+      letterSpacing: "0px",
+      marginTop: "0px",
+      marginBottom: "-6px",
+    },
+  },
+  AddCircleOutlineIcon: {
+    "&.MuiSvgIcon-root": {
+      fontSize: 18,
+      color: "#3F6FAF",
+      cursor: "pointer",
+      opacity: "1",
+      marginRight: "5px",
+    },
+  },
+  confirmButton: {
+    "&.MuiButtonBase-root": {
+      backgroundColor: "#1566db",
+      opacity: "1",
+      height: "38px",
+      fontSize: "13px",
+      color: "#fff",
+      textAlign: "center",
+      marginTop: "24px",
+      width: "200px",
+      cursor: "pointer",
+      textTransform: "capitalize",
+    },
+  },
+  confirmButtonborder: {
+    "&.MuiButtonBase-root": {
+      border: "1px solid #1566db",
+      opacity: "1",
+      height: "38px",
+      fontSize: "13px",
+      color: "#1566db",
+      textAlign: "center",
+      marginTop: "24px",
+      width: "100%",
+      cursor: "pointer",
+      textTransform: "capitalize",
     },
   },
 });
