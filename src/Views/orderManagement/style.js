@@ -183,6 +183,7 @@ const styles = () => ({
       marginTop: "6px",
       "&:hover": {
         backgroundColor: "#33fff30f",
+        cursor: "pointer",
       },
     },
   },
@@ -194,14 +195,26 @@ const styles = () => ({
       marginTop: "4px",
     },
   },
+  productCategory: {
+    "&.MuiBox-root": {
+      display: "flex",
+      justifyContent: "space-between",
+    },
+  },
+  productCategory1: {
+    "&.MuiBox-root": {
+      display: "flex",
+      whiteSpace: "nowrap",
+    },
+  },
   NewOrderBackroundBox: {
     "&.MuiBox-root": {
       backgroundColor: "#1566d9",
       padding: "5px 8px 5px 8px",
       color: "white",
-      borderRadius: "8px",
+      borderRadius: "4px",
       display: "flex",
-      justifyContent: "",
+      marginRight: "-4px",
     },
   },
   categoryText: {
@@ -468,6 +481,51 @@ const styles = () => ({
       display: "flex",
       justifyContent: "center",
       alignItems: "center",
+    },
+  },
+
+  // Booking Confirmed //
+  cmnDrawerPadding: {
+    "&.MuiBox-root": {
+      padding: "25px 50px 30px 50px",
+    },
+  },
+  cmnDrawerCloseIcon: {
+    "&.MuiSvgIcon-root": {
+      float: "right",
+      color: "#0d0303",
+      paddingTop: "15px",
+      cursor: "pointer",
+      // fontSize: '50px',
+    },
+  },
+  cmnDrawerHeadBox: {
+    "&.MuiBox-root": {
+      position: "relative",
+      display: "flex",
+      alignItems: "center",
+    },
+  },
+  cmnDrawerHeadingText: {
+    "&.MuiTypography-root": {
+      fontWeight: "800",
+      opacity: "1",
+      fontSize: "13px",
+      color: "#0d0303",
+      marginTop: "15px",
+      textTransform: "capitalize",
+      wordWrap: "break-word",
+      overflow: "hidden",
+      textOverflow: "ellipsis",
+      whiteSpace: "nowrap",
+    },
+  },
+  cmnDrawerBackArrow: {
+    "&.MuiSvgIcon-root": {
+      fontSize: "13px",
+      color: "#0d0303",
+      marginTop: "13px",
+      cursor: "pointer",
     },
   },
 });

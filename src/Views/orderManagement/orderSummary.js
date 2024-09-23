@@ -23,6 +23,7 @@ import styles from "./style";
 import { useTheme } from "@mui/material/styles";
 import EditOrderSummaryModal from "./editorderpickupSummary";
 import EditDeliversummary from "./editorderdeliverysummary";
+import BookingConfirmModal from "./BookingConfirmedModal";
 
 const ProductCategory = () => {
   const theme = useTheme();
@@ -30,11 +31,16 @@ const ProductCategory = () => {
 
   const [expanded, setExpanded] = useState("panel1");
   const [open, setOpen] = useState(false);
+
+  const [BookingOpen, setBookingOpen] = useState(false);
   const [opendelivery, setOpendelivery] = useState(false);
 
   const handleChange = (panel) => (event, isExpanded) => {
     setExpanded(isExpanded ? panel : false);
   };
+
+  const handleBookingOpen = () => setBookingOpen(true);
+  const handleBookingClose = () => setBookingOpen(false);
 
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
@@ -374,7 +380,9 @@ const ProductCategory = () => {
 
             <Grid item sx={12}>
               <Box sx={{ padding: "2px 10px 0px 10px" }}>
-                <Button sx={style.payButon}>Pay INR 2976.00</Button>
+                <Button sx={style.payButon} onClick={handleBookingOpen}>
+                  Pay INR 2976.00
+                </Button>
               </Box>
             </Grid>
           </Grid>
@@ -384,6 +392,10 @@ const ProductCategory = () => {
       <EditDeliversummary
         open={opendelivery}
         handleClose={handleClosedelivery}
+      />
+      <BookingConfirmModal
+        open={BookingOpen}
+        handleClose={handleBookingClose}
       />
     </Box>
   );
