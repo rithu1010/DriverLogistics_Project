@@ -21,8 +21,10 @@ const OrderManagement = () => {
                   </Typography>
                 </Box>
                 <Box sx={style.display}>
-                  <Typography sx={style.OrderNewText}>New Order</Typography>
-                  <span style={style.plusicon}>+</span>
+                  <Box sx={style.NewOrderBackroundBox}>
+                    <Typography sx={style.OrderNewText1}>New Order</Typography>
+                    <span style={style.plusicon1}>+</span>
+                  </Box>
                 </Box>
               </Box>
               <Divider sx={style.Divider} />

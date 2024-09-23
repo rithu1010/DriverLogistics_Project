@@ -1,3 +1,5 @@
+import { Dialpad } from "@mui/icons-material";
+
 const styles = () => ({
   //Delete Icon
   orderBox: {
@@ -53,6 +55,23 @@ const styles = () => ({
       },
       padding: "0px 24px 0px 12px",
     },
+  },
+  OrderNewText1: {
+    "&.MuiTypography-root": {
+      color: "#fff",
+      whiteSpace: "nowrap",
+      fontSize: "14px",
+      fontWeight: "500",
+      opacity: "1",
+      letterSpacing: "0px",
+      cursor: "pointer",
+    },
+  },
+  plusicon1: {
+    fontSize: "20px",
+    color: "#fff",
+    marginLeft: "7px",
+    marginTop: "-2px",
   },
   OrderNewText: {
     "&.MuiTypography-root": {
@@ -170,9 +189,19 @@ const styles = () => ({
   SpeakerIcon: {
     "&.MuiSvgIcon-root": {
       fontSize: "36px",
-      color: "#3f13ea",
+      color: "#4064f0",
       marginLeft: "4px",
       marginTop: "4px",
+    },
+  },
+  NewOrderBackroundBox: {
+    "&.MuiBox-root": {
+      backgroundColor: "#1566d9",
+      padding: "5px 8px 5px 8px",
+      color: "white",
+      borderRadius: "8px",
+      display: "flex",
+      justifyContent: "",
     },
   },
   categoryText: {
