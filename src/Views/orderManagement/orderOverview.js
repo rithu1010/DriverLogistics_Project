@@ -83,11 +83,23 @@ const OrderOverview = () => {
                 >
                   <TableHead sx={{ backgroundColor: "#f4f9fc" }}>
                     <TableRow>
-                      <TableCell>Dessert (100g serving)</TableCell>
-                      <TableCell align="right">Calories</TableCell>
-                      <TableCell align="right">Fat&nbsp;(g)</TableCell>
-                      <TableCell align="right">Carbs&nbsp;(g)</TableCell>
-                      <TableCell align="right">Protein&nbsp;(g)</TableCell>
+                      <TableCell sx={style.tablecelltd}>No</TableCell>
+                      <TableCell sx={style.tablecelltd}>Invoice no</TableCell>
+                      <TableCell sx={style.tablecelltd}>Load Type</TableCell>
+                      <TableCell sx={style.tablecelltd}>
+                        Load Quantity
+                      </TableCell>
+                      <TableCell sx={style.tablecelltd}>
+                        Actual Weight
+                      </TableCell>
+                      <TableCell sx={style.tablecelltd}>
+                        Volumetric (cm3)
+                      </TableCell>
+                      <TableCell sx={style.tablecelltd}>
+                        Product Category
+                      </TableCell>
+                      <TableCell sx={style.tablecelltd}>HAZMAT class</TableCell>
+                      <TableCell sx={style.tablecelltd}>Action</TableCell>
                     </TableRow>
                   </TableHead>
                   <TableBody>

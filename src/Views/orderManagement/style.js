@@ -93,6 +93,8 @@ const styles = () => ({
   display: {
     "&.MuiBox-root": {
       display: "flex",
+      justifyContent: "center",
+      marginTop: { xs: "12px", sm: "3px", md: "0", lg: "0", xl: "0" },
     },
   },
   Divider: {
@@ -228,10 +230,37 @@ const styles = () => ({
     },
   },
   inputField: {
+    marginTop: { xs: "10px", md: "0", sm: 0, lg: 0, xl: 0 },
     "& .MuiInputBase-input.MuiOutlinedInput-input": {
-      borderRadius: "0px !important",
+      borderTopRightRadius: "0px !important",
       color: "#0d0303",
       backgroundColor: "#fff",
+    },
+    "&.MuiFormControl-root": {
+      input: {
+        color: "#0d0303",
+        fontSize: "16px",
+        textAlign: "left",
+        padding: "7px 7px 7px 7px",
+      },
+    },
+    "& .MuiOutlinedInput-notchedOutline": {
+      borderRadius: "4px",
+      border: "1px solid #0d03032e",
+    },
+    "& .MuiInputLabel-root": {
+      color: "#0d0303",
+      fontSize: "13px",
+      fontWeight: "500",
+      opacity: "0.8",
+    },
+    "& .MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline": {
+      backgroundColor: "#fff",
+      border: "1px solid #0d03032e",
+    },
+    "& .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline": {
+      borderColor: "#fff",
+      border: "1px solid #0d03032e",
     },
   },
   volumetricBox: {
@@ -274,8 +303,8 @@ const styles = () => ({
     "&.MuiTypography-root": {
       color: "#0d0303",
       fontSize: "13px",
-      fontWeight: "530",
-      opacity: "1",
+      fontWeight: "550",
+      opacity: "0.7",
       letterSpacing: "0px",
       marginTop: "8px",
     },
@@ -545,6 +574,7 @@ const styles = () => ({
       fontSize: 20,
       color: "#363739",
       cursor: "pointer",
+      opacity: "0.8",
     },
   },
   ordermanageTableiconflexBox: {
@@ -578,6 +608,15 @@ const styles = () => ({
         lg: "0",
         xl: "0",
       },
+    },
+  },
+  tablecelltd: {
+    "&.MuiTableCell-root": {
+      letterSpacing: "0em",
+      fontWeight: "500",
+      opacity: "1",
+      lineHeight: "1rem",
+      whiteSpace: "nowrap",
     },
   },
 });

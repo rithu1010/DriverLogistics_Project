@@ -221,9 +221,12 @@ const ProductCategory = () => {
           <Grid container spacing={1}>
             {/* Volumetric */}
             <Grid item xs={12} md={4.5} sm={12}>
-              <Typography sx={style.formLabel}>Volumetric</Typography>
-              <Grid container spacing={1}>
-                <Grid item xs={6} sm={4} md={4} lg={4} xl={4}>
+              <Grid container spacing={0}>
+                <Grid item xs={12} sm={2.5} md={3} lg={3} xl={3}>
+                  <Typography sx={style.formLabel}>Volumetric</Typography>
+                </Grid>
+                {/* <Grid item xs={6} sm={0.5} md={0.5} lg={0.5} xl={0.5}></Grid> */}
+                <Grid item xs={12} sm={3} md={3} lg={3} xl={3}>
                   <TextField
                     label="Length"
                     variant="outlined"
@@ -235,7 +238,7 @@ const ProductCategory = () => {
                     onChange={handleVolumetricChange}
                   />
                 </Grid>
-                <Grid item xs={6} sm={4} md={4} lg={4} xl={4}>
+                <Grid item xs={12} sm={3} md={3} lg={3} xl={3}>
                   <TextField
                     label="Breadth"
                     variant="outlined"
@@ -247,7 +250,7 @@ const ProductCategory = () => {
                     onChange={handleVolumetricChange}
                   />
                 </Grid>
-                <Grid item xs={6} sm={4} md={4} lg={4} xl={4}>
+                <Grid item xs={12} sm={3} md={3} lg={3} xl={3}>
                   <TextField
                     label="Height"
                     variant="outlined"
@@ -266,10 +269,12 @@ const ProductCategory = () => {
             </Grid>
 
             {/* Actual Weight */}
-            <Grid item xs={12} md={3} sm={12}>
-              <Typography sx={style.formLabel}>Actual Weight</Typography>
-              <Grid container spacing={1}>
-                <Grid item xs={6} md={8} sm={6} lg={8} xl={8}>
+            <Grid item xs={12} md={4} sm={12}>
+              <Grid container spacing={0}>
+                <Grid item xs={12} md={3} sm={2.5} lg={4.2} xl={4.2}>
+                  <Typography sx={style.formLabel}>Actual Weight</Typography>
+                </Grid>
+                <Grid item xs={12} md={4.5} sm={4} lg={4.8} xl={4.8}>
                   <TextField
                     label="Weight"
                     variant="outlined"
@@ -281,7 +286,7 @@ const ProductCategory = () => {
                     onChange={handleVolumetricChange}
                   />
                 </Grid>
-                <Grid item xs={6} md={4} sm={6} lg={4} xl={4}>
+                <Grid item xs={12} md={4.5} sm={4} lg={3} xl={3}>
                   <TextField
                     label="Kg"
                     variant="outlined"
@@ -297,17 +302,24 @@ const ProductCategory = () => {
             </Grid>
 
             {/* Invoice No */}
-            <Grid item xs={12} md={3} sm={12}>
-              <Typography sx={style.formLabel}>Invoice No</Typography>
-              <TextField
-                label="000000"
-                variant="outlined"
-                size="small"
-                sx={style.inputField}
-                name="invoice"
-                value={volumetricData?.invoice}
-                onChange={handleVolumetricChange}
-              />
+            <Grid item xs={12} md={2} sm={12}>
+              <Grid container spacing={1}>
+                <Grid item xs={12} md={8} sm={2.5} lg={6.5} xl={6.5}>
+                  <Typography sx={style.formLabel}>Invoice No</Typography>
+                </Grid>
+                <Grid item xs={12} md={4} sm={5.5} lg={5.5} xl={5.5}>
+                  <TextField
+                    label="000000"
+                    variant="outlined"
+                    size="small"
+                    fullWidth
+                    sx={style.inputField}
+                    name="invoice"
+                    value={volumetricData?.invoice}
+                    onChange={handleVolumetricChange}
+                  />
+                </Grid>
+              </Grid>
             </Grid>
             <Grid
               item
