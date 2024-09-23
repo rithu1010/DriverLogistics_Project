@@ -19,21 +19,11 @@ import MoreVertIcon from "@mui/icons-material/MoreVert";
 import styles from "./style";
 import { useTheme } from "@mui/material/styles";
 
-const OrderOverview = () => {
+const OrderOverview = ({ orderData }) => {
   const theme = useTheme();
   const style = styles(theme);
+  console.log("orderDadddta", orderData);
 
-  function createData(name, calories, fat, carbs, protein) {
-    return { name, calories, fat, carbs, protein };
-  }
-
-  const rows = [
-    createData("Frozen yoghurt", 159, 6.0, 24, 4.0),
-    createData("Ice cream sandwich", 237, 9.0, 37, 4.3),
-    createData("Eclair", 262, 16.0, 24, 6.0),
-    createData("Cupcake", 305, 3.7, 67, 4.3),
-    createData("Gingerbread", 356, 16.0, 49, 3.9),
-  ];
   return (
     <Box sx={{ marginTop: "15px" }}>
       <Grid container spacing={1}>
@@ -76,7 +66,20 @@ const OrderOverview = () => {
               </Box>
             </Box>
             <Box>
-              <TableContainer>
+              <TableContainer
+                sx={{
+                  "&::-webkit-scrollbar-track": {
+                    backgroundColor: "#f1f1f1",
+                  },
+                  "&::-webkit-scrollbar-thumb": {
+                    backgroundColor: "#888",
+                    borderRadius: "10px",
+                  },
+                  "&::-webkit-scrollbar-thumb:hover": {
+                    backgroundColor: "#555",
+                  },
+                }}
+              >
                 <Table
                   sx={{ minWidth: 650, marginTop: "5px" }}
                   aria-label="simple table"
@@ -103,20 +106,37 @@ const OrderOverview = () => {
                     </TableRow>
                   </TableHead>
                   <TableBody>
-                    {rows.map((row) => (
+                    {orderData.map((row, index) => (
                       <TableRow
-                        key={row.name}
+                        key={index}
                         sx={{
                           "&:last-child td, &:last-child th": { border: 0 },
                         }}
                       >
-                        <TableCell component="th" scope="row">
-                          {row.name}
+                        <TableCell sx={style.tablecelltdrow}>
+                          {index + 1}
                         </TableCell>
-                        <TableCell align="right">{row.calories}</TableCell>
-                        <TableCell align="right">{row.fat}</TableCell>
-                        <TableCell align="right">{row.carbs}</TableCell>
-                        <TableCell align="right">{row.protein}</TableCell>
+                        <TableCell sx={style.tablecelltdrow}>
+                          {row.invoice || "--"}
+                        </TableCell>
+                        <TableCell sx={style.tablecelltdrow}>
+                          {row.loadType || "--"}
+                        </TableCell>
+                        <TableCell sx={style.tablecelltdrow}>
+                          {row.length || "--"}
+                        </TableCell>
+                        <TableCell sx={style.tablecelltdrow}>
+                          {row.weight || "--"}
+                        </TableCell>
+                        <TableCell sx={style.tablecelltdrow}>
+                          {row.weight || "--"}
+                        </TableCell>
+                        <TableCell sx={style.tablecelltdrow}>
+                          {row.category || "--"}
+                        </TableCell>
+                        <TableCell sx={style.tablecelltdrow}>
+                          {row.height || "--"}
+                        </TableCell>
                       </TableRow>
                     ))}
                   </TableBody>

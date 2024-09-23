@@ -29,7 +29,6 @@ const ProductCategory = () => {
     invoice: "",
   });
   const [orderData, setOrderData] = useState([]);
-  console.log("ordergggggData", orderData);
 
   const handleorderOpen = () => {
     setorderOpen(true);
@@ -110,9 +109,6 @@ const ProductCategory = () => {
               <Box sx={style.productCategory1}>Select Product Category</Box>
               <Box></Box>
             </Box>
-            {/* <Box
-              sx={{ borderBottom: "1px solid #1b1b1b0a", width: "100%" }}
-            ></Box> */}
           </AccordionSummary>
 
           <AccordionDetails>
@@ -343,7 +339,7 @@ const ProductCategory = () => {
 
         {/* orderOverview */}
         <Box>
-          <OrderOverview />
+          <OrderOverview orderData={orderData} />
         </Box>
       </Box>
       <AddOrdermodal open={orderOpen} handleClose={handleorderClose} />

@@ -191,7 +191,7 @@ const styles = () => ({
   },
   SpeakerIcon: {
     "&.MuiSvgIcon-root": {
-      fontSize: "36px",
+      fontSize: "50px",
       color: "#4064f0",
       marginLeft: "4px",
       marginTop: "4px",
@@ -222,7 +222,7 @@ const styles = () => ({
   categoryText: {
     "&.MuiTypography-root": {
       color: "#0d0303",
-      fontSize: "12px",
+      fontSize: "13px",
       fontWeight: "500",
       opacity: "1",
       letterSpacing: "0px",
@@ -255,7 +255,6 @@ const styles = () => ({
       opacity: "0.8",
     },
     "& .MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline": {
-      backgroundColor: "#fff",
       border: "1px solid #0d03032e",
     },
     "& .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline": {
@@ -616,8 +615,17 @@ const styles = () => ({
   tablecelltd: {
     "&.MuiTableCell-root": {
       letterSpacing: "0em",
+      fontWeight: "550",
+      opacity: "0.7",
+      lineHeight: "1rem",
+      whiteSpace: "nowrap",
+    },
+  },
+  tablecelltdrow: {
+    "&.MuiTableCell-root": {
+      letterSpacing: "0em",
       fontWeight: "500",
-      opacity: "1",
+      opacity: "0.7",
       lineHeight: "1rem",
       whiteSpace: "nowrap",
     },
