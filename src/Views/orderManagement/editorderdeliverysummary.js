@@ -65,6 +65,13 @@ const DeliveryAddress = ({ open, handleClose, DeliveryAddress }) => {
     City: Yup.string().required("Pickup Address is required"),
   });
 
+  const onSubmit = (values, { resetForm }) => {
+    console.log("values", values);
+
+    resetForm();
+    handleClose();
+  };
+
   return (
     <Box>
       <Modal
@@ -86,12 +93,9 @@ const DeliveryAddress = ({ open, handleClose, DeliveryAddress }) => {
           />
 
           <Formik
+            onSubmit={onSubmit}
             initialValues={initialValues}
             validationSchema={validationSchema}
-            onSubmit={(values) => {
-              console.log(values);
-              handleClose();
-            }}
           >
             {({ errors, touched }) => (
               <Form>
@@ -352,12 +356,7 @@ const DeliveryAddress = ({ open, handleClose, DeliveryAddress }) => {
                       alignItems: "center",
                     }}
                   >
-                    <Button
-                      type="submit"
-                      sx={styless.payButon}
-                      fullWidth
-                      onClick={handleClose}
-                    >
+                    <Button type="submit" sx={styless.payButon} fullWidth>
                       Add Details
                     </Button>
                   </Grid>
