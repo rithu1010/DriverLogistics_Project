@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   Box,
   Typography,
@@ -24,7 +24,6 @@ import { useTheme } from "@mui/material/styles";
 import EditOrderSummaryModal from "./editorderpickupSummary";
 import EditDeliversummary from "./editorderdeliverysummary";
 import BookingConfirmModal from "./BookingConfirmedModal";
-import PickupAddress from "./editorderpickupSummary";
 
 const ProductCategory = ({ orderData }) => {
   const theme = useTheme();
@@ -32,6 +31,8 @@ const ProductCategory = ({ orderData }) => {
 
   const [expanded, setExpanded] = useState("panel1");
   const [open, setOpen] = useState(false);
+  const [pickupAddressValue, setpickupAddressvalue] = useState();
+  const [deliveryAddressvalue, setdeliveryAddressvalue] = useState();
 
   const [BookingOpen, setBookingOpen] = useState(false);
   const [opendelivery, setOpendelivery] = useState(false);
@@ -75,6 +76,8 @@ const ProductCategory = ({ orderData }) => {
       DeliveryDate: "24/07/2024",
     },
   ];
+
+  useEffect(() => {}, [pickupAddressValue]);
 
   return (
     <Box>
@@ -126,11 +129,14 @@ const ProductCategory = ({ orderData }) => {
                       Pickup Contact details
                     </Typography>
                     <Typography sx={style.subTitlesummary}>
-                      {PickupAddress[0]?.PickupContactDetails?.contactName}
+                      {PickupAddress[0]?.PickupContactDetails?.contactName ||
+                        pickupAddressValue?.pickupcontactname}
                       &nbsp;
-                      {PickupAddress[0]?.PickupContactDetails?.phoneNumber}
+                      {PickupAddress[0]?.PickupContactDetails?.phoneNumber ||
+                        pickupAddressValue?.pickupcntctNumber}
                       &nbsp; | &nbsp;
-                      {PickupAddress[0]?.PickupContactDetails?.email}
+                      {PickupAddress[0]?.PickupContactDetails?.email ||
+                        pickupAddressValue?.pickupEmailAddress}
                     </Typography>
                   </Box>
                   <Box>
@@ -168,11 +174,14 @@ const ProductCategory = ({ orderData }) => {
                       Delivery Contact details
                     </Typography>
                     <Typography sx={style.subTitlesummary}>
-                      {DeliveryAddress[0]?.DeliveryContactDetails?.contactName}
+                      {DeliveryAddress[0]?.DeliveryContactDetails
+                        ?.contactName || deliveryAddressvalue?.name}
                       &nbsp;
-                      {DeliveryAddress[0]?.DeliveryContactDetails?.phoneNumber}
+                      {DeliveryAddress[0]?.DeliveryContactDetails
+                        ?.phoneNumber || deliveryAddressvalue?.contactNumber}
                       &nbsp; | &nbsp;
-                      {DeliveryAddress[0]?.DeliveryContactDetails?.email}{" "}
+                      {DeliveryAddress[0]?.DeliveryContactDetails?.email ||
+                        deliveryAddressvalue?.emailAddress}
                     </Typography>
                   </Box>
                   <Box>
@@ -456,11 +465,13 @@ const ProductCategory = ({ orderData }) => {
         open={open}
         handleClose={handleClose}
         PickupAddress={PickupAddress}
+        setpickupAddressvalue={setpickupAddressvalue}
       />
       <EditDeliversummary
         open={opendelivery}
         handleClose={handleClosedelivery}
         DeliveryAddress={DeliveryAddress}
+        setdeliveryAddressvalue={setdeliveryAddressvalue}
       />
       <BookingConfirmModal
         open={BookingOpen}

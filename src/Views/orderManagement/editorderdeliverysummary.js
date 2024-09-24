@@ -14,8 +14,15 @@ import { Formik, Form, Field } from "formik";
 import * as Yup from "yup";
 import styles from "./style";
 import { useTheme } from "@mui/material/styles";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
-const DeliveryAddress = ({ open, handleClose, DeliveryAddress }) => {
+const DeliveryAddress = ({
+  open,
+  handleClose,
+  DeliveryAddress,
+  setdeliveryAddressvalue,
+}) => {
   const theme = useTheme();
   const styless = styles(theme);
 
@@ -66,7 +73,8 @@ const DeliveryAddress = ({ open, handleClose, DeliveryAddress }) => {
   });
 
   const onSubmit = (values, { resetForm }) => {
-    console.log("values", values);
+    setdeliveryAddressvalue(values);
+    toast.success("Delivery address updated successfully!");
 
     resetForm();
     handleClose();
