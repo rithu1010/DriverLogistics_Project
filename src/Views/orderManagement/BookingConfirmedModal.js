@@ -287,7 +287,7 @@ const BookingConfirmation = ({ open, handleClose }) => {
                             sx={{
                               borderRight: "1px solid #1b1b1b0a",
                               borderLeft: "1px solid #1b1b1b0a",
-                              padding: "15px 15px 15px 15px",
+                              padding: "10px 15px 10px 15px",
                             }}
                             colSpan={2}
                           >
