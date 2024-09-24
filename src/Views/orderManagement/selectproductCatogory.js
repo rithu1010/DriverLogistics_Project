@@ -12,9 +12,17 @@ import AccordionSummary from "@mui/material/AccordionSummary";
 import AccordionDetails from "@mui/material/AccordionDetails";
 import styles from "./style";
 import { useTheme } from "@mui/material/styles";
-import SpeakerIcon from "@mui/icons-material/Speaker";
 import OrderOverview from "./orderOverview";
 import AddOrdermodal from "./AddOrderModal";
+
+import Electronics from "../../assets/images/household-appliance.png";
+import Consumables from "../../assets/images/goods.png";
+import Sports from "../../assets/images/cricket.png";
+import Truck from "../../assets/images/cargo-truck.png";
+import Clothes from "../../assets/images/shirt.png";
+import CartonBox from "../../assets/images/box.png";
+import WoodenBox from "../../assets/images/wooden-box.png";
+import Plastic from "../../assets/images/machine.png";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
@@ -85,18 +93,18 @@ const ProductCategory = ({ setOrderData, orderData }) => {
   };
 
   const SelectProductCategory = [
-    { name: "Consumables" },
-    { name: "Electronics" },
-    { name: "Sports Equipments" },
-    { name: "Cloth Items" },
-    { name: "Others" },
+    { name: "Consumables", src: Consumables },
+    { name: "Electronics", src: Electronics },
+    { name: "Sports Equipments", src: Sports },
+    { name: "Cloth Items", src: Clothes },
+    { name: "Others", src: Truck },
   ];
 
   const SelectLoadType = [
-    { name: "Carton Box" },
-    { name: "Wooden Box" },
-    { name: "Plastic" },
-    { name: "Others" },
+    { name: "Carton Box", src: CartonBox },
+    { name: "Wooden Box", src: WoodenBox },
+    { name: "Plastic", src: Plastic },
+    { name: "Others", src: Truck },
   ];
 
   const restrictToNumbers = (e) => {
@@ -150,7 +158,7 @@ const ProductCategory = ({ setOrderData, orderData }) => {
           >
             <Grid container spacing={0}>
               <Grid item xs={12} sm={6} md={6} lg={8} xl={8}>
-                <Box sx={{ marginTop: "0px" }}> Select Product Category</Box>
+                <Box sx={{ marginTop: "2px" }}> Select Product Category</Box>
               </Grid>
               {expanded !== "panel1" && (
                 <>
@@ -197,7 +205,16 @@ const ProductCategory = ({ setOrderData, orderData }) => {
                     }}
                   >
                     <Box style={{ display: "flex", justifyContent: "center" }}>
-                      <SpeakerIcon sx={style.SpeakerIcon} />
+                      <img
+                        alt={option.name}
+                        src={option.src}
+                        style={{
+                          height: "52px",
+                          width: "52px",
+                          marginBottom: "5px",
+                          marginTop: "5px",
+                        }}
+                      />{" "}
                     </Box>
                     <Box style={{ display: "flex", justifyContent: "center" }}>
                       <Typography sx={style.categoryText}>
@@ -230,7 +247,7 @@ const ProductCategory = ({ setOrderData, orderData }) => {
             >
               <Grid container spacing={0}>
                 <Grid item xs={12} sm={6} md={6} lg={8} xl={8}>
-                  <Box sx={{ marginTop: "0px" }}> Select Load Type</Box>
+                  <Box sx={{ marginTop: "2px" }}> Select Load Type</Box>
                 </Grid>
                 {expanded !== "panel2" && (
                   <>
@@ -279,7 +296,16 @@ const ProductCategory = ({ setOrderData, orderData }) => {
                       <Box
                         style={{ display: "flex", justifyContent: "center" }}
                       >
-                        <SpeakerIcon sx={style.SpeakerIcon} />
+                        <img
+                          alt={option.name}
+                          src={option.src}
+                          style={{
+                            height: "52px",
+                            width: "52px",
+                            marginBottom: "5px",
+                            marginTop: "5px",
+                          }}
+                        />{" "}
                       </Box>
                       <Box
                         style={{ display: "flex", justifyContent: "center" }}

@@ -188,14 +188,14 @@ const OrderOverview = ({ orderData }) => {
                                         handleInputChange(e, "loadType", index)
                                       }
                                     >
-                                      <MenuItem value="fullLoad">
-                                        Full Load
+                                      <MenuItem value="cartonBox">
+                                        Carton Box
                                       </MenuItem>
-                                      <MenuItem value="partialLoad">
-                                        Partial Load
+                                      <MenuItem value="woodenBox">
+                                        Wooden Box{" "}
                                       </MenuItem>
-                                      <MenuItem value="customLoad">
-                                        Custom Load
+                                      <MenuItem value="plastic">
+                                        Plastic
                                       </MenuItem>
                                     </Select>
                                   </FormControl>
@@ -204,6 +204,7 @@ const OrderOverview = ({ orderData }) => {
                                   <TextField
                                     variant="outlined"
                                     size="small"
+                                    sx={style.inputField}
                                     defaultValue={row.length}
                                     onChange={(e) =>
                                       handleInputChange(e, "length", index)
@@ -215,6 +216,7 @@ const OrderOverview = ({ orderData }) => {
                                   <TextField
                                     variant="outlined"
                                     size="small"
+                                    sx={style.inputField}
                                     defaultValue={row.weight}
                                     onChange={(e) =>
                                       handleInputChange(e, "weight", index)
@@ -225,6 +227,7 @@ const OrderOverview = ({ orderData }) => {
                                   <TextField
                                     variant="outlined"
                                     size="small"
+                                    sx={style.inputField}
                                     defaultValue={row.volemetric}
                                     onChange={(e) =>
                                       handleInputChange(e, "volemetric", index)
@@ -239,7 +242,7 @@ const OrderOverview = ({ orderData }) => {
                                   >
                                     <Select
                                       labelId="product-category-label-2"
-                                      value={row.category} // Bind to the state
+                                      defaultValue={{ category: row.category }}
                                       onChange={(e) =>
                                         handleInputChange(e, "category", index)
                                       }

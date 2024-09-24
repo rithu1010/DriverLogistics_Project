@@ -80,8 +80,8 @@ const BookingConfirmation = ({ open, handleClose }) => {
                       src={BookingImg}
                       alt="bookingimg"
                       style={{
-                        height: "40px",
-                        width: "40px",
+                        height: "44px",
+                        width: "44px",
                         marginTop: "-12px",
                       }}
                     />
@@ -251,12 +251,12 @@ const BookingConfirmation = ({ open, handleClose }) => {
                             }}
                           >
                             <Typography sx={style.tablecellmain}>
-                              Amount Rad
+                              Amount Paid
                             </Typography>
                           </TableCell>
                           <TableCell sx={{ padding: "15px 15px 15px 15px" }}>
                             <Typography sx={style.tablecellmain1}>
-                              1296700
+                              ₹1296700
                             </Typography>
                           </TableCell>
                         </TableRow>
