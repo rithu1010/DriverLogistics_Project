@@ -79,11 +79,8 @@ function ResponsiveAppBar() {
                 Now
               </span>
             </Box>
-            <Box
-              sx={{ flexGrow: 1, display: { xs: "none", md: "flex" }, ml: 10 }}
-            ></Box>
+            <Box sx={{ flexGrow: 1, display: { xs: "grid" }, ml: 10 }}></Box>
 
-            <Box sx={{ display: { xs: "flex", md: "none" } }}></Box>
             <Box sx={{ flexGrow: 0, mr: 0 }}>
               <Box sx={style.mailBox}>
                 <Box sx={style.mailBox}>
