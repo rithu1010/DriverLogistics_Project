@@ -249,7 +249,8 @@ const styles = () => ({
       },
     },
     "& .MuiOutlinedInput-notchedOutline": {
-      borderRadius: "4px",
+      borderTopRightRadius: "4px",
+      borderBottomRightRadius: "4px",
       border: "1px solid #0d03032e",
     },
     "& .MuiInputLabel-root": {
@@ -280,6 +281,66 @@ const styles = () => ({
       border: "1px solid #1b1b1b0a",
       marginTop: "15px",
       padding: "15px",
+    },
+  },
+  LoadType: {
+    "&.MuiBox-root": {
+      border: "1px solid #0d03032e",
+      borderRadius: "2px",
+      display: "flex",
+      alignItems: "center",
+      marginTop: "-5px",
+      marginBottom: "-5px",
+    },
+  },
+  LoadTypeTypo: {
+    "&.MuiTypography-root": {
+      flex: 2,
+      padding: "5px 2px 2px 10px",
+      backgroundColor: "#fff",
+      minHeight: "24px",
+      fontSize: "13px",
+      fontWeight: 550,
+    },
+  },
+  LoadTypeTypo2: {
+    "&.MuiTypography-root": {
+      flex: 1,
+      backgroundColor: "#095ef821",
+      padding: "3px",
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
+      cursor: "pointer",
+    },
+  },
+  EnterLoadBox: {
+    "&.MuiBox-root": {
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
+      height: "26px",
+      padding: "5px 16px",
+      backgroundColor: "#1566d9",
+      borderTopLeftRadius: "4px",
+      borderBottomLeftRadius: "4px",
+      fontSize: "14px",
+      color: "#fff",
+    },
+  },
+  proceedButton: {
+    "&.MuiButtonBase-root": {
+      textTransform: "capitalize",
+      fontSize: "13px",
+      height: "36px",
+      color: "#0d0303",
+      marginTop: "36px",
+      fontWeight: 500,
+      borderColor: "#0d03032e",
+      "&:hover": {
+        color: "#0d0303",
+        borderColor: "#0d03032e",
+      },
     },
   },
   title: {

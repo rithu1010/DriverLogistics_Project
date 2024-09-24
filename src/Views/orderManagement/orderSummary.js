@@ -33,7 +33,6 @@ const ProductCategory = ({ orderData }) => {
   const [open, setOpen] = useState(false);
   const [pickupAddressValue, setpickupAddressvalue] = useState();
   const [deliveryAddressvalue, setdeliveryAddressvalue] = useState();
-  console.log("pickupAddressValue", pickupAddressValue);
 
   const [BookingOpen, setBookingOpen] = useState(false);
   const [opendelivery, setOpendelivery] = useState(false);

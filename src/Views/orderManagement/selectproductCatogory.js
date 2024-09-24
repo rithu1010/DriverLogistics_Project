@@ -1,5 +1,12 @@
 import React, { useState } from "react";
-import { Box, Divider, Grid, Typography, TextField } from "@mui/material";
+import {
+  Box,
+  Divider,
+  Grid,
+  Typography,
+  TextField,
+  Button,
+} from "@mui/material";
 import Accordion from "@mui/material/Accordion";
 import AccordionSummary from "@mui/material/AccordionSummary";
 import AccordionDetails from "@mui/material/AccordionDetails";
@@ -32,7 +39,6 @@ const ProductCategory = ({ setOrderData, orderData }) => {
   });
 
   const handleOrderOpen = () => {
-    // Check if all required fields are filled
     if (
       !selectedCategory ||
       !selectedLoadType ||
@@ -49,7 +55,6 @@ const ProductCategory = ({ setOrderData, orderData }) => {
       return;
     }
 
-    // If validation passes, proceed with adding the order
     setorderOpen(true);
     const order = {
       category: selectedCategory,
@@ -58,7 +63,6 @@ const ProductCategory = ({ setOrderData, orderData }) => {
     };
     setOrderData((prevOrders) => [...prevOrders, order]);
 
-    // Reset form fields
     setSelectedCategory("");
     setSelectedLoadType("");
     setVolumetricData({
@@ -94,6 +98,19 @@ const ProductCategory = ({ setOrderData, orderData }) => {
     { name: "Plastic" },
     { name: "Others" },
   ];
+
+  const restrictToNumbers = (e) => {
+    if (
+      !/[0-9]/.test(e.key) &&
+      e.key !== "Backspace" &&
+      e.key !== "Delete" &&
+      e.key !== "ArrowLeft" &&
+      e.key !== "ArrowRight" &&
+      e.key !== "Tab"
+    ) {
+      e.preventDefault();
+    }
+  };
 
   const handleCategorySelect = (category) => {
     setSelectedCategory(category);
@@ -131,9 +148,29 @@ const ProductCategory = ({ setOrderData, orderData }) => {
             id="panel1-header"
             sx={style.AccordionSummary}
           >
-            <Box sx={style.productCategory}>
-              <Box sx={style.productCategory1}>Select Product Category</Box>
-            </Box>
+            <Grid container spacing={0}>
+              <Grid item xs={12} sm={6} md={6} lg={8} xl={8}>
+                <Box sx={{ marginTop: "0px" }}> Select Product Category</Box>
+              </Grid>
+              {expanded !== "panel1" && (
+                <>
+                  <Grid item xs={12} sm={6} md={6} lg={4} xl={4}>
+                    <Box sx={style.LoadType}>
+                      <Typography sx={style.LoadTypeTypo}>
+                        {selectedCategory || ""}
+                      </Typography>
+
+                      <Typography
+                        onClick={() => setExpanded("panel2")}
+                        sx={style.LoadTypeTypo2}
+                      >
+                        Change
+                      </Typography>
+                    </Box>
+                  </Grid>
+                </>
+              )}
+            </Grid>
           </AccordionSummary>
           <Divider sx={{ ...style.Divider, marginBottom: "12" }} />
 
@@ -191,7 +228,29 @@ const ProductCategory = ({ setOrderData, orderData }) => {
               id="panel2-header"
               sx={style.AccordionSummary}
             >
-              Select Load Type
+              <Grid container spacing={0}>
+                <Grid item xs={12} sm={6} md={6} lg={8} xl={8}>
+                  <Box sx={{ marginTop: "0px" }}> Select Load Type</Box>
+                </Grid>
+                {expanded !== "panel2" && (
+                  <>
+                    <Grid item xs={12} sm={6} md={6} lg={4} xl={4}>
+                      <Box sx={style.LoadType}>
+                        <Typography sx={style.LoadTypeTypo}>
+                          {selectedLoadType || ""}
+                        </Typography>
+
+                        <Typography
+                          onClick={() => setExpanded("panel2")}
+                          sx={style.LoadTypeTypo2}
+                        >
+                          Change
+                        </Typography>
+                      </Box>
+                    </Grid>
+                  </>
+                )}
+              </Grid>
             </AccordionSummary>
             <Divider sx={{ ...style.Divider, marginBottom: "12" }} />
 
@@ -233,6 +292,47 @@ const ProductCategory = ({ setOrderData, orderData }) => {
                   </Grid>
                 ))}
               </Grid>
+
+              <Grid container spacing={1}>
+                <Grid item xs={12} sm={8} md={8} lg={8} xl={8}>
+                  <Box
+                    sx={{
+                      display: "flex",
+                      alignItems: "center",
+                      marginTop: "35px",
+                    }}
+                  >
+                    <Box sx={style.EnterLoadBox}>Enter Load Quantity</Box>
+                    <TextField
+                      inputProps={{
+                        inputMode: "numeric",
+                        pattern: "[0-9]*",
+                      }}
+                      onKeyDown={(e) => restrictToNumbers(e)}
+                      variant="outlined"
+                      size="small"
+                      sx={style.inputField}
+                    />
+                  </Box>
+                </Grid>
+                <Grid
+                  item
+                  xs={12}
+                  sm={4}
+                  md={4}
+                  lg={4}
+                  xl={4}
+                  sx={{ display: "flex", justifyContent: "flex-end" }}
+                >
+                  <Button
+                    onClick={() => setExpanded(null)}
+                    variant="outlined"
+                    sx={style.proceedButton}
+                  >
+                    Proceed
+                  </Button>
+                </Grid>
+              </Grid>
             </AccordionDetails>
           </Accordion>
         </Box>
@@ -241,18 +341,17 @@ const ProductCategory = ({ setOrderData, orderData }) => {
 
         <Box sx={style.volumetricBox}>
           <Grid container spacing={1}>
-            {/* Volumetric */}
             <Grid item xs={12} md={4.5} sm={12}>
               <Grid container spacing={0}>
                 <Grid item xs={12} sm={2.5} md={3} lg={3} xl={3}>
                   <Typography sx={style.formLabel}>Volumetric</Typography>
                 </Grid>
-                {/* <Grid item xs={6} sm={0.5} md={0.5} lg={0.5} xl={0.5}></Grid> */}
                 <Grid item xs={12} sm={3} md={3} lg={3} xl={3}>
                   <TextField
                     label="Length"
                     variant="outlined"
                     size="small"
+                    onKeyDown={(e) => restrictToNumbers(e)}
                     sx={style.inputField}
                     fullWidth
                     name="length"
@@ -267,6 +366,7 @@ const ProductCategory = ({ setOrderData, orderData }) => {
                     size="small"
                     sx={style.inputField}
                     fullWidth
+                    onKeyDown={(e) => restrictToNumbers(e)}
                     name="breadth"
                     value={volumetricData?.breadth}
                     onChange={handleVolumetricChange}
@@ -277,6 +377,7 @@ const ProductCategory = ({ setOrderData, orderData }) => {
                     label="Height"
                     variant="outlined"
                     size="small"
+                    onKeyDown={(e) => restrictToNumbers(e)}
                     sx={style.inputField}
                     fullWidth
                     name="height"
@@ -301,6 +402,7 @@ const ProductCategory = ({ setOrderData, orderData }) => {
                     label="Weight"
                     variant="outlined"
                     size="small"
+                    onKeyDown={(e) => restrictToNumbers(e)}
                     sx={style.inputField}
                     fullWidth
                     name="weight"
