@@ -286,7 +286,7 @@ const PickupAddress = ({
                   </Grid>
 
                   <Grid item xs={6}>
-                    <FormLabel sx={styless.formlabeltext}>Fan-Number</FormLabel>
+                    <FormLabel sx={styless.formlabeltext}>Pan-Number</FormLabel>
                     <Field name="fanNumber">
                       {({ field }) => (
                         <TextField
@@ -325,10 +325,7 @@ const PickupAddress = ({
                       {" "}
                       <Grid item sx={1}>
                         <Box>
-                          <Checkbox
-                            defaultChecked
-                            style={{ color: "#000080" }}
-                          />
+                          <Checkbox style={{ color: "#1667DA" }} />
                         </Box>{" "}
                       </Grid>
                       <Grid item sx={11}>

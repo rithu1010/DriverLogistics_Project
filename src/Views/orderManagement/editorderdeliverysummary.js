@@ -331,10 +331,7 @@ const DeliveryAddress = ({
                       {" "}
                       <Grid item sx={1}>
                         <Box>
-                          <Checkbox
-                            defaultChecked
-                            style={{ color: "#000080" }}
-                          />
+                          <Checkbox style={{ color: "#1667DA" }} />
                         </Box>{" "}
                       </Grid>
                       <Grid item sx={11}>

@@ -71,7 +71,7 @@ const BookingConfirmation = ({ open, handleClose }) => {
   const tableData = [
     { field: "AWS ID", value: "RTBLR98752" },
     { field: "From", value: "Fortlachi682001" },
-    { field: "So", value: "Kasaragod-671121" },
+    { field: "To", value: "Kasaragod-671121" },
     { field: "Total Distance", value: "612km" },
     { field: "Product Category", value: "Electronics" },
     { field: "Amount Paid", value: "₹1296700" },
@@ -222,7 +222,7 @@ const BookingConfirmation = ({ open, handleClose }) => {
                             }}
                           >
                             <Typography sx={style.tablecellmain}>
-                              So{" "}
+                              To{" "}
                             </Typography>
                           </TableCell>
                           <TableCell sx={{ padding: "15px 15px 15px 15px" }}>

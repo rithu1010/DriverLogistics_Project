@@ -377,7 +377,7 @@ const ProductCategory = ({ setOrderData, orderData }) => {
           <Grid container spacing={1}>
             <Grid item xs={12} md={4.5} sm={12}>
               <Grid container spacing={0}>
-                <Grid item xs={12} sm={2.5} md={3} lg={3} xl={3}>
+                <Grid item xs={12} sm={2.5} md={3} lg={3} xl={2.8}>
                   <Typography sx={style.formLabel}>Volumetric</Typography>
                 </Grid>
                 <Grid item xs={12} sm={3} md={3} lg={3} xl={3}>
@@ -428,10 +428,10 @@ const ProductCategory = ({ setOrderData, orderData }) => {
             {/* Actual Weight */}
             <Grid item xs={12} md={4} sm={12}>
               <Grid container spacing={0}>
-                <Grid item xs={12} md={3} sm={2.5} lg={4.2} xl={4.2}>
+                <Grid item xs={12} md={3} sm={2.5} lg={4.2} xl={4}>
                   <Typography sx={style.formLabel}>Actual Weight</Typography>
                 </Grid>
-                <Grid item xs={12} md={4.5} sm={4} lg={5} xl={5}>
+                <Grid item xs={12} md={4.5} sm={4} lg={5} xl={5.2}>
                   <TextField
                     variant="outlined"
                     size="small"

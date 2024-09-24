@@ -800,6 +800,7 @@ const styles = () => ({
       letterSpacing: "0px",
       marginTop: "0px",
       marginBottom: "-6px",
+      cursor: "pointer",
     },
   },
   AddCircleOutlineIcon: {
