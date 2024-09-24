@@ -33,6 +33,7 @@ const ProductCategory = ({ orderData }) => {
   const [open, setOpen] = useState(false);
   const [pickupAddressValue, setpickupAddressvalue] = useState();
   const [deliveryAddressvalue, setdeliveryAddressvalue] = useState();
+  console.log("pickupAddressValue", pickupAddressValue);
 
   const [BookingOpen, setBookingOpen] = useState(false);
   const [opendelivery, setOpendelivery] = useState(false);
@@ -129,14 +130,20 @@ const ProductCategory = ({ orderData }) => {
                       Pickup Contact details
                     </Typography>
                     <Typography sx={style.subTitlesummary}>
-                      {PickupAddress[0]?.PickupContactDetails?.contactName ||
-                        pickupAddressValue?.pickupcontactname}
+                      {pickupAddressValue?.pickupcontactname &&
+                      pickupAddressValue?.pickupcontactname.trim() !== ""
+                        ? pickupAddressValue?.pickupcontactname
+                        : PickupAddress[0]?.PickupContactDetails?.contactName}
                       &nbsp;
-                      {PickupAddress[0]?.PickupContactDetails?.phoneNumber ||
-                        pickupAddressValue?.pickupcntctNumber}
+                      {pickupAddressValue?.pickupcntctNumber &&
+                      pickupAddressValue?.pickupcntctNumber.trim() !== ""
+                        ? pickupAddressValue?.pickupcntctNumber
+                        : PickupAddress[0]?.PickupContactDetails?.phoneNumber}
                       &nbsp; | &nbsp;
-                      {PickupAddress[0]?.PickupContactDetails?.email ||
-                        pickupAddressValue?.pickupEmailAddress}
+                      {pickupAddressValue?.pickupEmailAddress &&
+                      pickupAddressValue?.pickupEmailAddress.trim() !== ""
+                        ? pickupAddressValue?.pickupEmailAddress
+                        : PickupAddress[0]?.PickupContactDetails?.email}
                     </Typography>
                   </Box>
                   <Box>
@@ -174,14 +181,22 @@ const ProductCategory = ({ orderData }) => {
                       Delivery Contact details
                     </Typography>
                     <Typography sx={style.subTitlesummary}>
-                      {DeliveryAddress[0]?.DeliveryContactDetails
-                        ?.contactName || deliveryAddressvalue?.name}
+                      {deliveryAddressvalue?.name &&
+                      deliveryAddressvalue?.name.trim() !== ""
+                        ? deliveryAddressvalue?.name
+                        : DeliveryAddress[0]?.DeliveryContactDetails
+                            ?.contactName}
                       &nbsp;
-                      {DeliveryAddress[0]?.DeliveryContactDetails
-                        ?.phoneNumber || deliveryAddressvalue?.contactNumber}
+                      {deliveryAddressvalue?.contactNumber &&
+                      deliveryAddressvalue?.contactNumber.trim() !== ""
+                        ? deliveryAddressvalue?.contactNumber
+                        : DeliveryAddress[0]?.DeliveryContactDetails
+                            ?.phoneNumber}
                       &nbsp; | &nbsp;
-                      {DeliveryAddress[0]?.DeliveryContactDetails?.email ||
-                        deliveryAddressvalue?.emailAddress}
+                      {deliveryAddressvalue?.emailAddress &&
+                      deliveryAddressvalue?.emailAddress.trim() !== ""
+                        ? deliveryAddressvalue?.emailAddress
+                        : DeliveryAddress[0]?.DeliveryContactDetails?.email}
                     </Typography>
                   </Box>
                   <Box>

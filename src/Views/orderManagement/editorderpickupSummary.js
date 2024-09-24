@@ -49,9 +49,9 @@ const PickupAddress = ({
   };
 
   const initialValues = {
-    name: PickupAddress[0]?.PickupContactDetails?.contactName,
-    emailAddress: PickupAddress[0]?.PickupContactDetails?.email,
-    contactNumber: PickupAddress[0]?.PickupContactDetails?.phoneNumber,
+    name: "Sudharshan",
+    emailAddress: "sudharsh@gmail.com",
+    contactNumber: "+976776665555",
     panNumber: "4556767",
     pickupcontactname: PickupAddress[0]?.PickupContactDetails?.contactName,
     pickupEmailAddress: PickupAddress[0]?.PickupContactDetails?.email,
