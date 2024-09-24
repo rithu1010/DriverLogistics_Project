@@ -28,6 +28,7 @@ import MoreVertIcon from "@mui/icons-material/MoreVert";
 import EditIcon from "@mui/icons-material/Edit";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import TablePagination from "@mui/material/TablePagination";
 
 import styles from "./style";
 import { useTheme } from "@mui/material/styles";
@@ -39,6 +40,10 @@ const OrderOverview = ({ orderData, setOrderData }) => {
   const [rows, setRows] = useState(orderData || []);
   const [editIndex, setEditIndex] = useState(null);
   const [updatedRow, setUpdatedRow] = useState(null);
+
+  const [page, setPage] = useState(0);
+  const [rowsPerPage, setRowsPerPage] = useState(5);
+
   useEffect(() => {}, [rows]);
 
   const handleEditClick = (index) => {
@@ -86,6 +91,21 @@ const OrderOverview = ({ orderData, setOrderData }) => {
   const capitalizeFirstLetter = (string) => {
     return string?.charAt(0)?.toUpperCase() + string?.slice(1)?.toLowerCase();
   };
+
+  const handleChangePage = (event, newPage) => {
+    setPage(newPage);
+  };
+
+  const handleChangeRowsPerPage = (event) => {
+    setRowsPerPage(parseInt(event.target.value, 10));
+    setPage(0);
+  };
+
+  const paginatedRows = rows.slice(
+    page * rowsPerPage,
+    page * rowsPerPage + rowsPerPage
+  );
+
   return (
     <Box sx={{ marginTop: "15px" }}>
       <Grid container spacing={1}>
@@ -131,7 +151,7 @@ const OrderOverview = ({ orderData, setOrderData }) => {
               <TableContainer
                 sx={{
                   overflowY: "auto",
-                  maxHeight: "calc(98vh - 300px)",
+                  maxHeight: "calc(100vh - 90px)",
                   scrollBehavior: "smooth",
                   "&::-webkit-scrollbar-track": {
                     backgroundColor: "#f1f1f1",
@@ -171,9 +191,9 @@ const OrderOverview = ({ orderData, setOrderData }) => {
                     </TableRow>
                   </TableHead>
                   <TableBody>
-                    {rows && rows?.length > 0 ? (
+                    {paginatedRows && paginatedRows.length > 0 ? (
                       <>
-                        {rows?.map((row, index) => (
+                        {paginatedRows.map((row, index) => (
                           <TableRow
                             key={index}
                             sx={{
@@ -394,6 +414,15 @@ const OrderOverview = ({ orderData, setOrderData }) => {
                   </TableBody>
                 </Table>
               </TableContainer>
+              <TablePagination
+                rowsPerPageOptions={[5, 10, 25]}
+                component="div"
+                count={rows.length}
+                rowsPerPage={rowsPerPage}
+                page={page}
+                onPageChange={handleChangePage}
+                onRowsPerPageChange={handleChangeRowsPerPage}
+              />
             </Box>
           </Box>
         </Grid>
