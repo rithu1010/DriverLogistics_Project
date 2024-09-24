@@ -15,7 +15,7 @@ import * as Yup from "yup";
 import styles from "./style";
 import { useTheme } from "@mui/material/styles";
 
-const DeliveryAddress = ({ open, handleClose }) => {
+const DeliveryAddress = ({ open, handleClose, DeliveryAddress }) => {
   const theme = useTheme();
   const styless = styles(theme);
 
@@ -42,16 +42,16 @@ const DeliveryAddress = ({ open, handleClose }) => {
   };
 
   const initialValues = {
-    name: "",
-    emailAddress: "",
-    contactNumber: "",
-    secondarycontactNumber: "",
-    Addressline01: "",
-    Addressline02: "",
-    buildingNo: "",
-    streetName: "",
-    pinCode: "",
-    City: "",
+    name: DeliveryAddress[0]?.DeliveryContactDetails?.contactName,
+    emailAddress: DeliveryAddress[0]?.DeliveryContactDetails?.email,
+    contactNumber: DeliveryAddress[0]?.DeliveryContactDetails?.phoneNumber,
+    secondarycontactNumber: "+44555555556",
+    Addressline01: DeliveryAddress[0]?.DeliveryAddress,
+    Addressline02: DeliveryAddress[0]?.DeliveryAddress,
+    buildingNo: "B56677",
+    streetName: "Kozhikode",
+    pinCode: "6789990",
+    City: "Kozhikode",
   };
 
   const validationSchema = Yup.object({

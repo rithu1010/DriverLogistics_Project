@@ -24,6 +24,7 @@ import { useTheme } from "@mui/material/styles";
 import EditOrderSummaryModal from "./editorderpickupSummary";
 import EditDeliversummary from "./editorderdeliverysummary";
 import BookingConfirmModal from "./BookingConfirmedModal";
+import PickupAddress from "./editorderpickupSummary";
 
 const ProductCategory = ({ orderData }) => {
   const theme = useTheme();
@@ -47,6 +48,34 @@ const ProductCategory = ({ orderData }) => {
 
   const handleOpendelivery = () => setOpendelivery(true);
   const handleClosedelivery = () => setOpendelivery(false);
+
+  const PickupAddress = [
+    {
+      PickupAddress:
+        "Burger St, near Police Staticnort Nagar, Fort Kachi, Koch,Kerala 682001, India",
+      PickupContactDetails: {
+        contactName: "lack Goe",
+        phoneNumber: "+91 9876543210",
+        email: "jark goe15215@gmail.com",
+      },
+      PickupTime: "16:00-20:00",
+      pickupDate: "24/07/2024",
+    },
+  ];
+  const DeliveryAddress = [
+    {
+      DeliveryAddress:
+        "G/40, Mattanchery Cochin, Jew Town Rd, Emakulam, Kochi,Kerala 682202, India",
+      DeliveryContactDetails: {
+        contactName: "Napier",
+        phoneNumber: "+91 9876543210",
+        email: "napier 5215@gmail.com",
+      },
+      DeliveryTime: "16:00-20:00",
+      DeliveryDate: "24/07/2024",
+    },
+  ];
+
   return (
     <Box>
       <Box sx={style.ordersummaryBox}>
@@ -89,8 +118,7 @@ const ProductCategory = ({ orderData }) => {
                       </span>
                     </Typography>
                     <Typography sx={style.subTitlesummary}>
-                      Burger St, near Police Staticnort Nagar, Fort Kachi, Koch,
-                      Kerala 682001, India
+                      {PickupAddress[0]?.PickupAddress}
                     </Typography>
                   </Box>
                   <Box>
@@ -98,7 +126,11 @@ const ProductCategory = ({ orderData }) => {
                       Pickup Contact details
                     </Typography>
                     <Typography sx={style.subTitlesummary}>
-                      lack Goe +91 9876543210 | jark goe15215@gmail.com
+                      {PickupAddress[0]?.PickupContactDetails?.contactName}
+                      &nbsp;
+                      {PickupAddress[0]?.PickupContactDetails?.phoneNumber}
+                      &nbsp; | &nbsp;
+                      {PickupAddress[0]?.PickupContactDetails?.email}
                     </Typography>
                   </Box>
                   <Box>
@@ -106,7 +138,8 @@ const ProductCategory = ({ orderData }) => {
                       Pickup Time & Date
                     </Typography>
                     <Typography sx={style.subTitlesummary}>
-                      24/07/2024 | 16:00-20:00
+                      {PickupAddress[0]?.pickupDate} &nbsp;| &nbsp;
+                      {PickupAddress[0]?.PickupTime}
                     </Typography>
                   </Box>
 
@@ -127,8 +160,7 @@ const ProductCategory = ({ orderData }) => {
                       </span>
                     </Typography>
                     <Typography sx={style.subTitlesummary}>
-                      G/40, Mattanchery Cochin, Jew Town Rd, Emakulam, Kochi,
-                      Kerala 682202, India
+                      {DeliveryAddress[0]?.DeliveryAddress}
                     </Typography>
                   </Box>
                   <Box>
@@ -136,7 +168,11 @@ const ProductCategory = ({ orderData }) => {
                       Delivery Contact details
                     </Typography>
                     <Typography sx={style.subTitlesummary}>
-                      Napier +91 9876543210 | napier 5215@gmail.com
+                      {DeliveryAddress[0]?.DeliveryContactDetails?.contactName}
+                      &nbsp;
+                      {DeliveryAddress[0]?.DeliveryContactDetails?.phoneNumber}
+                      &nbsp; | &nbsp;
+                      {DeliveryAddress[0]?.DeliveryContactDetails?.email}{" "}
                     </Typography>
                   </Box>
                   <Box>
@@ -416,10 +452,15 @@ const ProductCategory = ({ orderData }) => {
           </Grid>
         </Box>
       </Box>
-      <EditOrderSummaryModal open={open} handleClose={handleClose} />
+      <EditOrderSummaryModal
+        open={open}
+        handleClose={handleClose}
+        PickupAddress={PickupAddress}
+      />
       <EditDeliversummary
         open={opendelivery}
         handleClose={handleClosedelivery}
+        DeliveryAddress={DeliveryAddress}
       />
       <BookingConfirmModal
         open={BookingOpen}
