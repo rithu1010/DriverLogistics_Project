@@ -73,6 +73,16 @@ const OrderOverview = ({ orderData, setOrderData }) => {
     setEditIndex(null);
   };
 
+  const handleDelete = (index) => {
+    const updatedRows = rows.filter((row, i) => i !== index);
+    setRows(updatedRows);
+    setOrderData(updatedRows);
+    toast.success("Order deleted successfully!", {
+      position: "top-right",
+      autoClose: 3000,
+    });
+  };
+
   const capitalizeFirstLetter = (string) => {
     return string?.charAt(0)?.toUpperCase() + string?.slice(1)?.toLowerCase();
   };
@@ -334,12 +344,15 @@ const OrderOverview = ({ orderData, setOrderData }) => {
                                       onClick={() => handleEditClick(index)}
                                     >
                                       <EditIcon sx={style.tableIconsvg} />
-                                    </IconButton>{" "}
-                                    <IconButton sx={style.tableIcon}>
+                                    </IconButton>
+                                    <IconButton
+                                      sx={style.tableIcon}
+                                      onClick={() => handleDelete(index)}
+                                    >
                                       <DeleteOutlineIcon
                                         sx={style.tableIconsvg}
                                       />
-                                    </IconButton>{" "}
+                                    </IconButton>
                                     <IconButton sx={style.tableIcon}>
                                       <AddIcon sx={style.tableIconsvg} />
                                     </IconButton>{" "}
