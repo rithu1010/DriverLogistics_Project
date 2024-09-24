@@ -67,8 +67,8 @@ const BookingConfirmation = ({ open, handleClose }) => {
                     sx={style.cmnDrawerCloseIcon}
                   />
 
-                  <Box sx={style.cmnDrawerHeadBox}>
-                    <KeyboardBackspaceIcon sx={style.KeyboardBackspaceIcon} />{" "}
+                  <Box sx={style.cmnDrawerHeadBox} onClick={handleClose}>
+                    <KeyboardBackspaceIcon sx={style.KeyboardBackspaceIcon} />
                     <Typography sx={style.cmnDrawerHeadingText}>
                       Back to order
                     </Typography>
