@@ -21,7 +21,7 @@ const styles = () => ({
     "&.MuiBox-root": {
       border: "0.3px solid #70707012",
       padding: "15px 3px 15px 3px",
-      marginBottom: "29px",
+      marginBottom: "5px",
       borderRadius: "4px",
       paddingBottom: "20px",
       backgroundColor: "#FCFCFC",
