@@ -18,6 +18,8 @@ import AddCircleOutlineIcon from "@mui/icons-material/AddCircleOutline";
 import { useTheme } from "@mui/material/styles";
 import CancelPresentationIcon from "@mui/icons-material/CancelPresentation";
 import BookingImg from "../../assets/images/booking.png";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const BookingConfirmation = ({ open, handleClose }) => {
   const theme = useTheme();
@@ -44,6 +46,41 @@ const BookingConfirmation = ({ open, handleClose }) => {
       zIndex: (theme) => theme.zIndex.modal + 0.3,
       backgroundColor: "#33fff30f",
     },
+  };
+
+  const downloadCSV = (data, filename = "receipt.csv") => {
+    const csvRows = [];
+
+    csvRows.push("Field,Value");
+
+    data.forEach((row) => {
+      csvRows.push(`${row.field},${row.value}`);
+    });
+
+    const csvString = csvRows.join("\n");
+    const blob = new Blob([csvString], { type: "text/csv" });
+    const link = document.createElement("a");
+    link.href = URL.createObjectURL(blob);
+    link.download = filename;
+
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
+  const tableData = [
+    { field: "AWS ID", value: "RTBLR98752" },
+    { field: "From", value: "Fortlachi682001" },
+    { field: "So", value: "Kasaragod-671121" },
+    { field: "Total Distance", value: "612km" },
+    { field: "Product Category", value: "Electronics" },
+    { field: "Amount Paid", value: "₹1296700" },
+    { field: "EST Delivery Date", value: "ORD123456" },
+  ];
+
+  const handleDownloadReceipt = () => {
+    downloadCSV(tableData, "BookingReceipt.csv");
+    toast.success("Download Receipt successfully!");
   };
 
   return (
@@ -313,8 +350,11 @@ const BookingConfirmation = ({ open, handleClose }) => {
                     </Button>
                   </Grid>
                   <Grid item xs={6}>
-                    <Button sx={style.confirmButtonborder}>
-                      Download Receipt{" "}
+                    <Button
+                      sx={style.confirmButtonborder}
+                      onClick={handleDownloadReceipt}
+                    >
+                      Download Receipt
                     </Button>
                   </Grid>
                 </Grid>

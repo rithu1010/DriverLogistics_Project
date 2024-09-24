@@ -2,8 +2,9 @@ import React from "react";
 import { Modal, Box, Grid } from "@mui/material";
 import styles from "./style";
 import { useTheme } from "@mui/material/styles";
-import DoneIcon from "@mui/icons-material/Done";
-
+// import DoneIcon from "@mui/icons-material/Done";
+import Lottie from "lottie-react";
+import live from "../../assets/jsonfiles/success.json";
 const AddOrderModal = ({ open, handleClose }) => {
   const theme = useTheme();
   const styless = styles(theme);
@@ -55,7 +56,13 @@ const AddOrderModal = ({ open, handleClose }) => {
               <Box>
                 <Box sx={styless.displayFlex}>
                   <Box sx={styless.doneiconBox}>
-                    <DoneIcon sx={styless.DoneIcon} />
+                    <Lottie
+                      animationData={live}
+                      loop={true}
+                      style={style.lottieimg}
+                    />
+                    &nbsp;
+                    {/* <DoneIcon sx={styless.DoneIcon} /> */}
                   </Box>
                 </Box>
 
