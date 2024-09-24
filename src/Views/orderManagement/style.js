@@ -121,6 +121,10 @@ const styles = () => ({
     "& .MuiButtonBase-root.MuiAccordionSummary-root": {
       padding: "15px",
     },
+    "& .MuiButtonBase-root.MuiAccordionSummary-root.Mui-expanded": {
+      minHeight: "0",
+      padding: "10px 15px 0px 15px",
+    },
   },
   activeJobsListBox1: {
     "&.MuiBox-root": {
@@ -223,10 +227,10 @@ const styles = () => ({
     "&.MuiTypography-root": {
       color: "#0d0303",
       fontSize: "13px",
-      fontWeight: "500",
+      fontWeight: "550",
       opacity: "1",
       letterSpacing: "0px",
-      marginTop: "8px",
+      marginTop: "10px",
     },
   },
   inputField: {

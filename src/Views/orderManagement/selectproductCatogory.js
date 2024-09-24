@@ -133,9 +133,9 @@ const ProductCategory = ({ setOrderData, orderData }) => {
           >
             <Box sx={style.productCategory}>
               <Box sx={style.productCategory1}>Select Product Category</Box>
-              <Box></Box>
             </Box>
           </AccordionSummary>
+          <Divider sx={{ ...style.Divider, marginBottom: "12" }} />
 
           <AccordionDetails>
             <Grid container spacing={1}>
