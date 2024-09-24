@@ -79,6 +79,9 @@ const ProductCategory = ({ orderData }) => {
 
   useEffect(() => {}, [pickupAddressValue]);
 
+  const capitalizeFirstLetter = (string) => {
+    return string?.charAt(0)?.toUpperCase() + string?.slice(1)?.toLowerCase();
+  };
   return (
     <Box>
       <Box sx={style.ordersummaryBox}>
@@ -204,7 +207,8 @@ const ProductCategory = ({ orderData }) => {
                     </Typography>
                     <Typography sx={style.subTitlesummary}>
                       <Box sx={style.LoadCategoryBox}>
-                        {orderData[0]?.category || "Electronics"}
+                        {capitalizeFirstLetter(orderData[0]?.category) ||
+                          "Electronics"}
                       </Box>
                     </Typography>
                   </Box>
@@ -214,7 +218,8 @@ const ProductCategory = ({ orderData }) => {
                     </Typography>
                     <Typography sx={style.subTitlesummary}>
                       <Box sx={style.LoadCategoryBox}>
-                        {orderData[0]?.loadType || "Cartoon Box"}
+                        {capitalizeFirstLetter(orderData[0]?.loadType) ||
+                          "Cartoon Box"}
                       </Box>
                     </Typography>
                   </Box>

@@ -26,11 +26,13 @@ import AutorenewIcon from "@mui/icons-material/Autorenew";
 import SettingsIcon from "@mui/icons-material/Settings";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
 import EditIcon from "@mui/icons-material/Edit";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 import styles from "./style";
 import { useTheme } from "@mui/material/styles";
 
-const OrderOverview = ({ orderData }) => {
+const OrderOverview = ({ orderData, setOrderData }) => {
   const theme = useTheme();
   const style = styles(theme);
 
@@ -61,9 +63,18 @@ const OrderOverview = ({ orderData }) => {
   const handleSave = (index) => {
     const updatedRows = [...rows];
     updatedRows[index] = updatedRow;
-
     setRows(updatedRows);
+    setOrderData(updatedRows);
+    toast.success("Order updated successfully!", {
+      position: "top-right",
+      autoClose: 3000,
+    });
+
     setEditIndex(null);
+  };
+
+  const capitalizeFirstLetter = (string) => {
+    return string?.charAt(0)?.toUpperCase() + string?.slice(1)?.toLowerCase();
   };
   return (
     <Box sx={{ marginTop: "15px" }}>
@@ -180,6 +191,7 @@ const OrderOverview = ({ orderData }) => {
                                     size="small"
                                     variant="outlined"
                                     fullWidth
+                                    sx={style.inputField2}
                                   >
                                     <Select
                                       labelId="load-type-label"
@@ -188,11 +200,11 @@ const OrderOverview = ({ orderData }) => {
                                         handleInputChange(e, "loadType", index)
                                       }
                                     >
-                                      <MenuItem value="cartonBox">
+                                      <MenuItem value="carton Box">
                                         Carton Box
                                       </MenuItem>
-                                      <MenuItem value="woodenBox">
-                                        Wooden Box{" "}
+                                      <MenuItem value="wooden Box">
+                                        Wooden Box
                                       </MenuItem>
                                       <MenuItem value="plastic">
                                         Plastic
@@ -239,6 +251,7 @@ const OrderOverview = ({ orderData }) => {
                                     size="small"
                                     variant="outlined"
                                     fullWidth
+                                    sx={style.inputField2}
                                   >
                                     <Select
                                       labelId="product-category-label-2"
@@ -264,20 +277,17 @@ const OrderOverview = ({ orderData }) => {
                                     size="small"
                                     variant="outlined"
                                     fullWidth
+                                    sx={style.inputField2}
                                   >
                                     <Select
                                       labelId="hazmat-class-label-2"
-                                      defaultValue="class9"
+                                      defaultValue={row.class1}
+                                      onChange={(e) =>
+                                        handleInputChange(e, "class", index)
+                                      }
                                     >
-                                      <MenuItem value="class1">
-                                        Class 1
-                                      </MenuItem>
-                                      <MenuItem value="class2">
-                                        Class 2
-                                      </MenuItem>
-                                      <MenuItem value="class3">
-                                        Class 3
-                                      </MenuItem>
+                                      <MenuItem value="Yes">Yes </MenuItem>
+                                      <MenuItem value="No">No </MenuItem>
                                     </Select>
                                   </FormControl>
                                 </TableCell>
@@ -300,7 +310,7 @@ const OrderOverview = ({ orderData }) => {
                                   {row.invoice || "--"}
                                 </TableCell>
                                 <TableCell sx={style.tablecelltdrow}>
-                                  {row.loadType || "--"}
+                                  {capitalizeFirstLetter(row.loadType) || "--"}
                                 </TableCell>
                                 <TableCell sx={style.tablecelltdrow}>
                                   {row.length || "--"}
@@ -312,10 +322,10 @@ const OrderOverview = ({ orderData }) => {
                                   {row.volemetric || "--"}
                                 </TableCell>
                                 <TableCell sx={style.tablecelltdrow}>
-                                  {row.category || "--"}
+                                  {capitalizeFirstLetter(row.category) || "--"}
                                 </TableCell>
                                 <TableCell sx={style.tablecelltdrow}>
-                                  {row.height || "--"}
+                                  {capitalizeFirstLetter(row.class) || "--"}
                                 </TableCell>
                                 <TableCell sx={style.tablecelltdrow}>
                                   <Box sx={{ display: "flex" }}>

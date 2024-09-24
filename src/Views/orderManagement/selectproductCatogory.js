@@ -320,7 +320,15 @@ const ProductCategory = ({ setOrderData, orderData }) => {
               </Grid>
 
               <Grid container spacing={1}>
-                <Grid item xs={12} sm={8} md={8} lg={8} xl={8}>
+                <Grid
+                  item
+                  xs={12}
+                  sm={10}
+                  md={12}
+                  lg={8}
+                  xl={8}
+                  sx={style.gridProceed1}
+                >
                   <Box
                     sx={{
                       display: "flex",
@@ -344,11 +352,11 @@ const ProductCategory = ({ setOrderData, orderData }) => {
                 <Grid
                   item
                   xs={12}
-                  sm={4}
+                  sm={2}
                   md={4}
                   lg={4}
                   xl={4}
-                  sx={{ display: "flex", justifyContent: "flex-end" }}
+                  sx={style.gridProceed}
                 >
                   <Button
                     onClick={() => setExpanded(null)}
@@ -374,9 +382,9 @@ const ProductCategory = ({ setOrderData, orderData }) => {
                 </Grid>
                 <Grid item xs={12} sm={3} md={3} lg={3} xl={3}>
                   <TextField
-                    label="Length"
                     variant="outlined"
                     size="small"
+                    placeholder="Length"
                     onKeyDown={(e) => restrictToNumbers(e)}
                     sx={style.inputField}
                     fullWidth
@@ -387,9 +395,9 @@ const ProductCategory = ({ setOrderData, orderData }) => {
                 </Grid>
                 <Grid item xs={12} sm={3} md={3} lg={3} xl={3}>
                   <TextField
-                    label="Breadth"
                     variant="outlined"
                     size="small"
+                    placeholder="Breadth"
                     sx={style.inputField}
                     fullWidth
                     onKeyDown={(e) => restrictToNumbers(e)}
@@ -400,9 +408,9 @@ const ProductCategory = ({ setOrderData, orderData }) => {
                 </Grid>
                 <Grid item xs={12} sm={3} md={3} lg={3} xl={3}>
                   <TextField
-                    label="Height"
                     variant="outlined"
                     size="small"
+                    placeholder="Height"
                     onKeyDown={(e) => restrictToNumbers(e)}
                     sx={style.inputField}
                     fullWidth
@@ -423,11 +431,11 @@ const ProductCategory = ({ setOrderData, orderData }) => {
                 <Grid item xs={12} md={3} sm={2.5} lg={4.2} xl={4.2}>
                   <Typography sx={style.formLabel}>Actual Weight</Typography>
                 </Grid>
-                <Grid item xs={12} md={4.5} sm={4} lg={4.8} xl={4.8}>
+                <Grid item xs={12} md={4.5} sm={4} lg={5} xl={5}>
                   <TextField
-                    label="Weight"
                     variant="outlined"
                     size="small"
+                    placeholder="Weight"
                     onKeyDown={(e) => restrictToNumbers(e)}
                     sx={style.inputField}
                     fullWidth
@@ -436,9 +444,10 @@ const ProductCategory = ({ setOrderData, orderData }) => {
                     onChange={handleVolumetricChange}
                   />
                 </Grid>
-                <Grid item xs={12} md={4.5} sm={4} lg={3} xl={3}>
+                <Grid item xs={12} md={4.5} sm={4} lg={2.8} xl={2.8}>
                   <TextField
-                    label="Kg"
+                    value="Kg"
+                    disabled
                     variant="outlined"
                     size="small"
                     sx={style.inputField}
@@ -459,9 +468,9 @@ const ProductCategory = ({ setOrderData, orderData }) => {
                 </Grid>
                 <Grid item xs={12} md={4} sm={5.5} lg={5.5} xl={5.5}>
                   <TextField
-                    label="000000"
                     variant="outlined"
                     size="small"
+                    placeholder="000000"
                     fullWidth
                     sx={style.inputField}
                     name="invoice"
@@ -493,7 +502,7 @@ const ProductCategory = ({ setOrderData, orderData }) => {
 
         {/* orderOverview */}
         <Box>
-          <OrderOverview orderData={orderData} />
+          <OrderOverview orderData={orderData} setOrderData={setOrderData} />
         </Box>
         <ToastContainer />
       </Box>

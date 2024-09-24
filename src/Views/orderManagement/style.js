@@ -233,6 +233,64 @@ const styles = () => ({
       marginTop: "10px",
     },
   },
+  gridProceed: {
+    "&.MuiGrid-root": {
+      display: "flex",
+      justifyContent: {
+        xs: "center",
+        sm: "flex-end",
+        md: "flex-end",
+        lg: "flex-end",
+        xl: "flex-end",
+      },
+    },
+  },
+  gridProceed1: {
+    "&.MuiGrid-root": {
+      display: "flex",
+      justifyContent: {
+        xs: "center",
+        sm: "start",
+        md: "start",
+        lg: "start",
+        xl: "start",
+      },
+    },
+  },
+  inputField2: {
+    "& .MuiOutlinedInput-input.MuiSelect-select ": {
+      padding: "5px 28px 6px 15px",
+      background: "transparent",
+    },
+    "&.MuiFormControl-root": {
+      width: "100%",
+      fontSize: "10px",
+      backgroundColor: "transparent",
+    },
+
+    "& .MuiOutlinedInput-notchedOutline": {
+      borderRadius: "10px",
+    },
+    "& .MuiOutlinedInput-root": {
+      "& fieldset": {
+        borderColor: "none",
+        borderRadius: "4px",
+        height: 20,
+        paddingRight: "8px",
+        paddingBlock: "10px",
+        border: "1px solid #0d03032e",
+      },
+    },
+    "&.MuiFormControl-root .MuiInputBase-root": {
+      backgroundColor: "#fff",
+      "&:hover fieldset": {
+        border: "1px solid #0d03032e",
+      },
+      "&.Mui-focused fieldset": {
+        border: "1px solid #0d03032e",
+      },
+    },
+  },
   inputField: {
     marginTop: { xs: "10px", md: "0", sm: 0, lg: 0, xl: 0 },
     "& .MuiInputBase-input.MuiOutlinedInput-input": {
@@ -243,7 +301,8 @@ const styles = () => ({
     "&.MuiFormControl-root": {
       input: {
         color: "#0d0303",
-        fontSize: "16px",
+        opacity: "0.8",
+        fontSize: "14px",
         textAlign: "left",
         padding: "7px 7px 7px 7px",
       },
@@ -255,7 +314,7 @@ const styles = () => ({
     },
     "& .MuiInputLabel-root": {
       color: "#0d0303",
-      fontSize: "13px",
+      fontSize: "12px",
       fontWeight: "500",
       opacity: "0.8",
     },
@@ -289,7 +348,7 @@ const styles = () => ({
       borderRadius: "2px",
       display: "flex",
       alignItems: "center",
-      marginTop: "-5px",
+      marginTop: { xs: "20px", md: "-5px", sm: "-5px", lg: "-5px", xl: "-5px" },
       marginBottom: "-5px",
     },
   },
