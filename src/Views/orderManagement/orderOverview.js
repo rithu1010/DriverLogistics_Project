@@ -1,5 +1,15 @@
-import React from "react";
-import { Box, Typography, Grid, IconButton } from "@mui/material";
+import React, { useEffect, useState } from "react";
+import {
+  Box,
+  Typography,
+  Grid,
+  IconButton,
+  TextField,
+  FormControl,
+  MenuItem,
+  Button,
+  Select,
+} from "@mui/material";
 import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
 import TableCell from "@mui/material/TableCell";
@@ -15,6 +25,7 @@ import DeleteOutlineIcon from "@mui/icons-material/DeleteOutline";
 import AutorenewIcon from "@mui/icons-material/Autorenew";
 import SettingsIcon from "@mui/icons-material/Settings";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
+import EditIcon from "@mui/icons-material/Edit";
 
 import styles from "./style";
 import { useTheme } from "@mui/material/styles";
@@ -23,6 +34,37 @@ const OrderOverview = ({ orderData }) => {
   const theme = useTheme();
   const style = styles(theme);
 
+  const [rows, setRows] = useState(orderData || []);
+  const [editIndex, setEditIndex] = useState(null);
+  const [updatedRow, setUpdatedRow] = useState(null);
+  useEffect(() => {}, [rows]);
+
+  const handleEditClick = (index) => {
+    setEditIndex(index);
+    setUpdatedRow({ ...rows[index] });
+  };
+
+  useEffect(() => {
+    if (orderData) {
+      setRows(orderData);
+    }
+  }, [orderData]);
+
+  const handleInputChange = (event, field) => {
+    const value = event.target.value;
+    setUpdatedRow((prev) => ({
+      ...prev,
+      [field]: value,
+    }));
+  };
+
+  const handleSave = (index) => {
+    const updatedRows = [...rows];
+    updatedRows[index] = updatedRow;
+
+    setRows(updatedRows);
+    setEditIndex(null);
+  };
   return (
     <Box sx={{ marginTop: "15px" }}>
       <Grid container spacing={1}>
@@ -108,39 +150,193 @@ const OrderOverview = ({ orderData }) => {
                     </TableRow>
                   </TableHead>
                   <TableBody>
-                    {orderData && orderData?.length > 0 ? (
+                    {rows && rows?.length > 0 ? (
                       <>
-                        {orderData.map((row, index) => (
+                        {rows?.map((row, index) => (
                           <TableRow
                             key={index}
                             sx={{
                               "&:last-child td, &:last-child th": { border: 0 },
                             }}
                           >
-                            <TableCell sx={style.tablecelltdrow}>
-                              {index + 1}
-                            </TableCell>
-                            <TableCell sx={style.tablecelltdrow}>
-                              {row.invoice || "--"}
-                            </TableCell>
-                            <TableCell sx={style.tablecelltdrow}>
-                              {row.loadType || "--"}
-                            </TableCell>
-                            <TableCell sx={style.tablecelltdrow}>
-                              {row.length || "--"}
-                            </TableCell>
-                            <TableCell sx={style.tablecelltdrow}>
-                              {row.weight || "--"}
-                            </TableCell>
-                            <TableCell sx={style.tablecelltdrow}>
-                              {row.weight || "--"}
-                            </TableCell>
-                            <TableCell sx={style.tablecelltdrow}>
-                              {row.category || "--"}
-                            </TableCell>
-                            <TableCell sx={style.tablecelltdrow}>
-                              {row.height || "--"}
-                            </TableCell>
+                            {editIndex === index ? (
+                              <>
+                                <TableCell sx={{ padding: "5px" }}>
+                                  {index + 1}
+                                </TableCell>
+                                <TableCell sx={{ padding: "5px" }}>
+                                  <TextField
+                                    variant="outlined"
+                                    size="small"
+                                    sx={style.inputField}
+                                    defaultValue={row.invoice}
+                                    onChange={(e) =>
+                                      handleInputChange(e, "invoice", index)
+                                    }
+                                  />
+                                </TableCell>
+                                <TableCell sx={{ padding: "5px" }}>
+                                  <FormControl
+                                    size="small"
+                                    variant="outlined"
+                                    fullWidth
+                                  >
+                                    <Select
+                                      labelId="load-type-label"
+                                      defaultValue={row?.loadType}
+                                      onChange={(e) =>
+                                        handleInputChange(e, "loadType", index)
+                                      }
+                                    >
+                                      <MenuItem value="fullLoad">
+                                        Full Load
+                                      </MenuItem>
+                                      <MenuItem value="partialLoad">
+                                        Partial Load
+                                      </MenuItem>
+                                      <MenuItem value="customLoad">
+                                        Custom Load
+                                      </MenuItem>
+                                    </Select>
+                                  </FormControl>
+                                </TableCell>
+                                <TableCell sx={{ padding: "5px" }}>
+                                  <TextField
+                                    variant="outlined"
+                                    size="small"
+                                    defaultValue={row.length}
+                                    onChange={(e) =>
+                                      handleInputChange(e, "length", index)
+                                    }
+                                  />
+                                </TableCell>
+
+                                <TableCell sx={{ padding: "5px" }}>
+                                  <TextField
+                                    variant="outlined"
+                                    size="small"
+                                    defaultValue={row.weight}
+                                    onChange={(e) =>
+                                      handleInputChange(e, "weight", index)
+                                    }
+                                  />
+                                </TableCell>
+                                <TableCell sx={{ padding: "5px" }}>
+                                  <TextField
+                                    variant="outlined"
+                                    size="small"
+                                    defaultValue={row.volemetric}
+                                    onChange={(e) =>
+                                      handleInputChange(e, "volemetric", index)
+                                    }
+                                  />
+                                </TableCell>
+                                <TableCell>
+                                  <FormControl
+                                    size="small"
+                                    variant="outlined"
+                                    fullWidth
+                                  >
+                                    <Select
+                                      labelId="product-category-label-2"
+                                      value={row.category} // Bind to the state
+                                      onChange={(e) =>
+                                        handleInputChange(e, "category", index)
+                                      }
+                                    >
+                                      <MenuItem value="chemicals">
+                                        Chemicals
+                                      </MenuItem>
+                                      <MenuItem value="electronics">
+                                        Electronics
+                                      </MenuItem>
+                                      <MenuItem value="furniture">
+                                        Furniture
+                                      </MenuItem>
+                                    </Select>
+                                  </FormControl>
+                                </TableCell>
+                                <TableCell sx={{ padding: "5px" }}>
+                                  <FormControl
+                                    size="small"
+                                    variant="outlined"
+                                    fullWidth
+                                  >
+                                    <Select
+                                      labelId="hazmat-class-label-2"
+                                      defaultValue="class9"
+                                    >
+                                      <MenuItem value="class1">
+                                        Class 1
+                                      </MenuItem>
+                                      <MenuItem value="class2">
+                                        Class 2
+                                      </MenuItem>
+                                      <MenuItem value="class3">
+                                        Class 3
+                                      </MenuItem>
+                                    </Select>
+                                  </FormControl>
+                                </TableCell>
+                                <TableCell sx={{ padding: "5px" }}>
+                                  <Button
+                                    onClick={() =>
+                                      handleSave(index, updatedRow)
+                                    }
+                                  >
+                                    Save
+                                  </Button>
+                                </TableCell>
+                              </>
+                            ) : (
+                              <>
+                                <TableCell sx={style.tablecelltdrow}>
+                                  {index + 1}
+                                </TableCell>
+                                <TableCell sx={style.tablecelltdrow}>
+                                  {row.invoice || "--"}
+                                </TableCell>
+                                <TableCell sx={style.tablecelltdrow}>
+                                  {row.loadType || "--"}
+                                </TableCell>
+                                <TableCell sx={style.tablecelltdrow}>
+                                  {row.length || "--"}
+                                </TableCell>
+                                <TableCell sx={style.tablecelltdrow}>
+                                  {row.weight || "--"}
+                                </TableCell>
+                                <TableCell sx={style.tablecelltdrow}>
+                                  {row.volemetric || "--"}
+                                </TableCell>
+                                <TableCell sx={style.tablecelltdrow}>
+                                  {row.category || "--"}
+                                </TableCell>
+                                <TableCell sx={style.tablecelltdrow}>
+                                  {row.height || "--"}
+                                </TableCell>
+                                <TableCell sx={style.tablecelltdrow}>
+                                  <Box sx={{ display: "flex" }}>
+                                    <IconButton
+                                      sx={style.tableIcon}
+                                      onClick={() => handleEditClick(index)}
+                                    >
+                                      <EditIcon sx={style.tableIconsvg} />
+                                    </IconButton>{" "}
+                                    <IconButton sx={style.tableIcon}>
+                                      <DeleteOutlineIcon
+                                        sx={style.tableIconsvg}
+                                      />
+                                    </IconButton>{" "}
+                                    <IconButton sx={style.tableIcon}>
+                                      <AddIcon sx={style.tableIconsvg} />
+                                    </IconButton>{" "}
+                                    <IconButton sx={style.tableIcon}>
+                                      <MoreVertIcon sx={style.tableIconsvg} />
+                                    </IconButton>
+                                  </Box>
+                                </TableCell>
+                              </>
+                            )}
                           </TableRow>
                         ))}
                       </>

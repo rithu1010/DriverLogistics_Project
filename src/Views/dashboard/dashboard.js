@@ -3,14 +3,12 @@ import AppBar from "@mui/material/AppBar";
 import {
   Box,
   Avatar,
-  IconButton,
   Drawer,
   List,
   ListItem,
   ListItemText,
   Divider,
 } from "@mui/material";
-import MenuIcon from "@mui/icons-material/Menu";
 import { Link } from "react-router-dom";
 import Toolbar from "@mui/material/Toolbar";
 import styles from "./style";
