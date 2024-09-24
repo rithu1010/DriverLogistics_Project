@@ -13,6 +13,7 @@ import {
   Button,
 } from "@mui/material";
 import styles from "./style";
+import KeyboardBackspaceIcon from "@mui/icons-material/KeyboardBackspace";
 import AddCircleOutlineIcon from "@mui/icons-material/AddCircleOutline";
 import { useTheme } from "@mui/material/styles";
 import CancelPresentationIcon from "@mui/icons-material/CancelPresentation";
@@ -31,9 +32,10 @@ const BookingConfirmation = ({ open, handleClose }) => {
       transform: "translate(-50%, -50%)",
       width: "80%",
       maxWidth: "480px",
-      maxHeight: "90vh",
+      maxHeight: "86vh",
       overflowY: "auto",
       bgcolor: "background.paper",
+      "&::-webkit-scrollbar": { display: "none" },
       boxShadow: 22,
       p: 4,
       borderRadius: "12px",
@@ -66,6 +68,7 @@ const BookingConfirmation = ({ open, handleClose }) => {
                   />
 
                   <Box sx={style.cmnDrawerHeadBox}>
+                    <KeyboardBackspaceIcon sx={style.KeyboardBackspaceIcon} />{" "}
                     <Typography sx={style.cmnDrawerHeadingText}>
                       Back to order
                     </Typography>
@@ -105,7 +108,7 @@ const BookingConfirmation = ({ open, handleClose }) => {
                         >
                           <TableCell
                             colSpan={1}
-                            sx={{ padding: "0px 15px 0px 15px" }}
+                            sx={{ padding: "5px 15px 5px 19px" }}
                           >
                             <span
                               style={{
@@ -117,7 +120,10 @@ const BookingConfirmation = ({ open, handleClose }) => {
                               Booked on 20-03-2024
                             </span>
                           </TableCell>
-                          <TableCell> Ernakulam Unit Hub</TableCell>
+                          <TableCell sx={{ padding: "0px 15px 0px 15px" }}>
+                            {" "}
+                            Ernakulam Unit Hub
+                          </TableCell>
                         </TableRow>
                       </TableHead>
                       <TableBody>
@@ -130,15 +136,14 @@ const BookingConfirmation = ({ open, handleClose }) => {
                           <TableCell
                             sx={{
                               borderRight: "1px solid #1b1b1b0a",
-                              paddingRight: 1,
-                              paddingLeft: 2,
+                              padding: "15px 15px 15px 15px",
                             }}
                           >
                             <Typography sx={style.tablecellmain}>
                               AWS ID
                             </Typography>
                           </TableCell>
-                          <TableCell sx={{ paddingLeft: 1 }}>
+                          <TableCell sx={{ padding: "15px 15px 15px 15px" }}>
                             <Typography sx={style.tablecellmain1}>
                               RTBLR98752
                             </Typography>
@@ -154,15 +159,14 @@ const BookingConfirmation = ({ open, handleClose }) => {
                           <TableCell
                             sx={{
                               borderRight: "1px solid #1b1b1b0a",
-                              paddingRight: 1,
-                              paddingLeft: 2,
+                              padding: "15px 15px 15px 15px",
                             }}
                           >
                             <Typography sx={style.tablecellmain}>
                               From{" "}
                             </Typography>
                           </TableCell>
-                          <TableCell sx={{ paddingLeft: 1 }}>
+                          <TableCell sx={{ padding: "15px 15px 15px 15px" }}>
                             <Typography sx={style.tablecellmain1}>
                               Fortlachi682001
                             </Typography>
@@ -177,15 +181,14 @@ const BookingConfirmation = ({ open, handleClose }) => {
                           <TableCell
                             sx={{
                               borderRight: "1px solid #1b1b1b0a",
-                              paddingRight: 1,
-                              paddingLeft: 2,
+                              padding: "15px 15px 15px 15px",
                             }}
                           >
                             <Typography sx={style.tablecellmain}>
                               So{" "}
                             </Typography>
                           </TableCell>
-                          <TableCell sx={{ paddingLeft: 1 }}>
+                          <TableCell sx={{ padding: "15px 15px 15px 15px" }}>
                             <Typography sx={style.tablecellmain1}>
                               Kasaragod-671121
                             </Typography>
@@ -200,15 +203,14 @@ const BookingConfirmation = ({ open, handleClose }) => {
                           <TableCell
                             sx={{
                               borderRight: "1px solid #1b1b1b0a",
-                              paddingRight: 1,
-                              paddingLeft: 2,
+                              padding: "15px 15px 15px 15px",
                             }}
                           >
                             <Typography sx={style.tablecellmain}>
                               Total Distance
                             </Typography>
                           </TableCell>
-                          <TableCell sx={{ paddingLeft: 1 }}>
+                          <TableCell sx={{ padding: "15px 15px 15px 15px" }}>
                             <Typography sx={style.tablecellmain1}>
                               612kmm
                             </Typography>
@@ -223,15 +225,14 @@ const BookingConfirmation = ({ open, handleClose }) => {
                           <TableCell
                             sx={{
                               borderRight: "1px solid #1b1b1b0a",
-                              paddingRight: 1,
-                              paddingLeft: 2,
+                              padding: "15px 15px 15px 15px",
                             }}
                           >
                             <Typography sx={style.tablecellmain}>
                               Product Category
                             </Typography>
                           </TableCell>
-                          <TableCell sx={{ paddingLeft: 1 }}>
+                          <TableCell sx={{ padding: "15px 15px 15px 15px" }}>
                             <Typography sx={style.tablecellmain1}>
                               Electronics
                             </Typography>
@@ -246,15 +247,14 @@ const BookingConfirmation = ({ open, handleClose }) => {
                           <TableCell
                             sx={{
                               borderRight: "1px solid #1b1b1b0a",
-                              paddingRight: 1,
-                              paddingLeft: 2,
+                              padding: "15px 15px 15px 15px",
                             }}
                           >
                             <Typography sx={style.tablecellmain}>
                               Amount Rad
                             </Typography>
                           </TableCell>
-                          <TableCell sx={{ paddingLeft: 1 }}>
+                          <TableCell sx={{ padding: "15px 15px 15px 15px" }}>
                             <Typography sx={style.tablecellmain1}>
                               1296700
                             </Typography>
@@ -269,15 +269,14 @@ const BookingConfirmation = ({ open, handleClose }) => {
                           <TableCell
                             sx={{
                               borderRight: "1px solid #1b1b1b0a",
-                              paddingRight: 1,
-                              paddingLeft: 2,
+                              padding: "15px 15px 15px 15px",
                             }}
                           >
                             <Typography sx={style.tablecellmain}>
                               EST Delivery Date
                             </Typography>
                           </TableCell>
-                          <TableCell sx={{ paddingLeft: 1 }}>
+                          <TableCell sx={{ padding: "15px 15px 15px 15px" }}>
                             <Typography sx={style.tablecellmain1}>
                               ORD123456
                             </Typography>
@@ -288,8 +287,7 @@ const BookingConfirmation = ({ open, handleClose }) => {
                             sx={{
                               borderRight: "1px solid #1b1b1b0a",
                               borderLeft: "1px solid #1b1b1b0a",
-                              paddingRight: 1,
-                              paddingLeft: 2,
+                              padding: "15px 15px 15px 15px",
                             }}
                             colSpan={2}
                           >
