@@ -295,7 +295,7 @@ const ProductCategory = ({ orderData }) => {
                         </TableCell>
                         <TableCell sx={{ paddingLeft: 1 }}>
                           <Typography sx={style.tablecellmain1}>
-                            10.00
+                            {orderData?.length > 0 ? "10.00" : "0.00"}
                           </Typography>
                         </TableCell>
                       </TableRow>
@@ -319,7 +319,7 @@ const ProductCategory = ({ orderData }) => {
                         </TableCell>
                         <TableCell sx={{ paddingLeft: 1 }}>
                           <Typography sx={style.tablecellmain1}>
-                            10.00
+                            {orderData?.length > 0 ? "10.00" : "0.00"}
                           </Typography>
                         </TableCell>
                       </TableRow>
@@ -342,7 +342,8 @@ const ProductCategory = ({ orderData }) => {
                         </TableCell>
                         <TableCell sx={{ paddingLeft: 1 }}>
                           <Typography sx={style.tablecellmain1}>
-                            546kg
+                            {orderData?.length > 0 ? " 546" : "0"}
+                            kg
                           </Typography>
                         </TableCell>
                       </TableRow>
@@ -411,7 +412,7 @@ const ProductCategory = ({ orderData }) => {
                         </TableCell>
                         <TableCell sx={{ paddingLeft: 1 }}>
                           <Typography sx={style.tablecellmain1}>
-                            #500.00
+                            {orderData?.length > 0 ? "#500.00" : "0.00"}
                           </Typography>
                         </TableCell>
                       </TableRow>
