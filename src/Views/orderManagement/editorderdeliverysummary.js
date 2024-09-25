@@ -107,12 +107,77 @@ const DeliveryAddress = ({
           >
             {({ errors, touched }) => (
               <Form>
-                <Grid container spacing={1}>
-                  <Grid item xs={6}>
-                    Date
+                <Grid
+                  container
+                  spacing={1}
+                  sx={{ mb: 2, padding: " 5px 0px 0px 0px" }}
+                >
+                  <Grid item xs={2} sm={6} md={6} lg={6} xl={6}>
+                    <label
+                      style={{
+                        display: "block",
+                        marginBottom: "4px",
+                        fontSize: "14px",
+                      }}
+                    >
+                      Date
+                    </label>
+                    <input
+                      type="date"
+                      style={{
+                        padding: "8px",
+                        border: "1px solid #ccc",
+                        borderRadius: "4px",
+                        boxSizing: "border-box",
+                        width: "100%",
+                      }}
+                    />
                   </Grid>
-                  <Grid item xs={6}>
-                    Date Time
+                  <Grid item xs={2} sm={6} md={6} lg={6} xl={6}>
+                    <Grid container spacing={1}>
+                      <Grid item xs={6} sm={6} md={6} lg={6} xl={6}>
+                        <label
+                          style={{
+                            display: "block",
+                            marginBottom: "4px",
+                            fontSize: "14px",
+                          }}
+                        >
+                          Start Time
+                        </label>
+                        <input
+                          type="time"
+                          style={{
+                            padding: "8px",
+                            border: "1px solid #ccc",
+                            borderRadius: "4px",
+                            boxSizing: "border-box",
+                            width: "100%",
+                          }}
+                        />
+                      </Grid>
+                      <Grid item xs={6} sm={6} md={6} lg={6} xl={6}>
+                        <label
+                          style={{
+                            display: "block",
+                            marginBottom: "4px",
+                            fontSize: "14px",
+                          }}
+                        >
+                          End Time
+                        </label>
+                        <input
+                          type="time"
+                          style={{
+                            padding: "8px",
+                            border: "1px solid #ccc",
+                            borderRadius: "4px",
+                            boxSizing: "border-box",
+                            width: "100%",
+                          }}
+                        />
+                      </Grid>
+                    </Grid>
                   </Grid>
                 </Grid>
                 <Divider
