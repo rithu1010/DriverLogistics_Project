@@ -365,7 +365,7 @@ const ProductCategory = ({ orderData }) => {
                         </TableCell>
                         <TableCell sx={{ paddingLeft: 1 }}>
                           <Typography sx={style.tablecellmain1}>
-                            ₹2,01600
+                            {orderData?.length > 0 ? "₹2,01600" : "0.00"}
                           </Typography>
                         </TableCell>
                       </TableRow>
@@ -388,7 +388,7 @@ const ProductCategory = ({ orderData }) => {
                         </TableCell>
                         <TableCell sx={{ paddingLeft: 1 }}>
                           <Typography sx={style.tablecellmain1}>
-                            #50:00
+                            {orderData?.length > 0 ? " #50:00" : "0.00"}
                           </Typography>
                         </TableCell>
                       </TableRow>
@@ -429,7 +429,9 @@ const ProductCategory = ({ orderData }) => {
                 <Typography sx={style.totalweight}>Total Weight</Typography>
               </Grid>
               <Grid item xs={4.4}>
-                <Typography sx={style.totalweight1}>118kg</Typography>
+                <Typography sx={style.totalweight1}>
+                  {orderData?.length > 0 ? 118 : "0"}kg
+                </Typography>
               </Grid>
             </Grid>
           </Box>
@@ -441,7 +443,9 @@ const ProductCategory = ({ orderData }) => {
                 <Typography sx={style.totalweight}>SUB Total</Typography>
               </Grid>
               <Grid item xs={4.4}>
-                <Typography sx={style.totalweight1}>₹ 2976.00</Typography>
+                <Typography sx={style.totalweight1}>
+                  ₹ {orderData?.length > 0 ? 2976.0 : "0.00"}
+                </Typography>
               </Grid>
             </Grid>
           </Box>
@@ -473,7 +477,7 @@ const ProductCategory = ({ orderData }) => {
             <Grid item sx={12}>
               <Box sx={{ padding: "2px 10px 0px 10px" }}>
                 <Button sx={style.payButon} onClick={handleBookingOpen}>
-                  Pay INR 2976.00
+                  Pay INR {orderData?.length > 0 ? 2976.0 : "0.00"}
                 </Button>
               </Box>
             </Grid>
