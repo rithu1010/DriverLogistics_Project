@@ -29,7 +29,7 @@ const ProductCategory = ({ orderData }) => {
   const theme = useTheme();
   const style = styles(theme);
 
-  const [expanded, setExpanded] = useState("panel1");
+  const [expanded, setExpanded] = useState(null);
   const [open, setOpen] = useState(false);
   const [pickupAddressValue, setpickupAddressvalue] = useState();
   const [deliveryAddressvalue, setdeliveryAddressvalue] = useState();
@@ -451,39 +451,41 @@ const ProductCategory = ({ orderData }) => {
             </Grid>
           </Box>
         </Box>
-        <Box>
-          <Grid container spacing={0}>
-            <Grid item sx={1}>
-              <Box>
-                <Checkbox defaultChecked style={{ color: "#1667DA" }} />
-              </Box>{" "}
-            </Grid>
-            <Grid item sx={11}>
-              <Box>
-                <Typography sx={style.termsandconditions}>
-                  I agree to the terms and conditions
-                </Typography>
-              </Box>
-            </Grid>
-            <Grid item sx={12}>
-              <Box sx={{ padding: "2px 10px 0px 10px" }}>
-                <Typography sx={style.termsandconditions1}>
-                  by Checking this box, I confirm that I have read and agree to
-                  abide by the terms governing this transaction, induding refurd
-                  and cancellation policies
-                </Typography>
-              </Box>
-            </Grid>
+        {orderData?.length > 0 && (
+          <Box>
+            <Grid container spacing={0}>
+              <Grid item sx={1}>
+                <Box>
+                  <Checkbox defaultChecked style={{ color: "#1667DA" }} />
+                </Box>{" "}
+              </Grid>
+              <Grid item sx={11}>
+                <Box>
+                  <Typography sx={style.termsandconditions}>
+                    I agree to the terms and conditions
+                  </Typography>
+                </Box>
+              </Grid>
+              <Grid item sx={12}>
+                <Box sx={{ padding: "2px 10px 0px 10px" }}>
+                  <Typography sx={style.termsandconditions1}>
+                    by Checking this box, I confirm that I have read and agree
+                    to abide by the terms governing this transaction, induding
+                    refurd and cancellation policies
+                  </Typography>
+                </Box>
+              </Grid>
 
-            <Grid item sx={12}>
-              <Box sx={{ padding: "2px 10px 0px 10px" }}>
-                <Button sx={style.payButon} onClick={handleBookingOpen}>
-                  Pay INR {orderData?.length > 0 ? 2976.0 : "0.00"}
-                </Button>
-              </Box>
+              <Grid item sx={12}>
+                <Box sx={{ padding: "2px 10px 0px 10px" }}>
+                  <Button sx={style.payButon} onClick={handleBookingOpen}>
+                    Pay INR {orderData?.length > 0 ? 2976.0 : "0.00"}
+                  </Button>
+                </Box>
+              </Grid>
             </Grid>
-          </Grid>
-        </Box>
+          </Box>
+        )}
       </Box>
       <EditOrderSummaryModal
         open={open}
